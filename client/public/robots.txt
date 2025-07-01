@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ribison-chemicals.com/sitemap.xml
+
+# Block sensitive areas (none for this site)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow all search engines to crawl the site
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Crawl-delay (optional)
+Crawl-delay: 1

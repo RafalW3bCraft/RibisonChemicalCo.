@@ -1,0 +1,1274 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Manrope:wght@200..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Enhanced Global Industry Standard Theme System */
+  
+  /* Base System Colors - Optimized for Chemical Industry */
+  --background: hsl(210, 40%, 99%);
+  --foreground: hsl(215, 25%, 15%);
+  --muted: hsl(210, 40%, 96%);
+  --muted-foreground: hsl(215, 16%, 46%);
+  --popover: hsl(210, 40%, 99%);
+  --popover-foreground: hsl(215, 25%, 15%);
+  --card: hsl(210, 40%, 99%);
+  --card-foreground: hsl(215, 25%, 15%);
+  --border: hsl(214, 32%, 91%);
+  --input: hsl(214, 32%, 91%);
+  --primary: hsl(201, 96%, 32%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(210, 40%, 96%);
+  --secondary-foreground: hsl(215, 25%, 15%);
+  --accent: hsl(39, 85%, 59%);
+  --accent-foreground: hsl(215, 25%, 15%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(201, 96%, 32%);
+  --radius: 8px;
+  
+  /* Ribison Brand Colors - From Company Logo */
+  /* Primary: Logo Orange - Dynamic, Innovation, Energy */
+  --ribison-primary: hsl(28, 100%, 55%);
+  --ribison-primary-50: hsl(28, 100%, 97%);
+  --ribison-primary-100: hsl(28, 100%, 94%);
+  --ribison-primary-200: hsl(29, 100%, 87%);
+  --ribison-primary-300: hsl(30, 100%, 78%);
+  --ribison-primary-400: hsl(31, 97%, 72%);
+  --ribison-primary-500: hsl(28, 100%, 55%);
+  --ribison-primary-600: hsl(25, 95%, 53%);
+  --ribison-primary-700: hsl(22, 78%, 46%);
+  --ribison-primary-800: hsl(20, 69%, 38%);
+  --ribison-primary-900: hsl(17, 56%, 32%);
+  
+  /* Secondary: Logo Blue - Professional, Trust, Reliability */
+  --ribison-blue: hsl(225, 80%, 45%);
+  --ribison-blue-50: hsl(225, 80%, 97%);
+  --ribison-blue-100: hsl(225, 80%, 94%);
+  --ribison-blue-200: hsl(225, 80%, 87%);
+  --ribison-blue-300: hsl(225, 80%, 78%);
+  --ribison-blue-400: hsl(225, 80%, 60%);
+  --ribison-blue-500: hsl(225, 80%, 45%);
+  --ribison-blue-600: hsl(225, 80%, 35%);
+  --ribison-blue-700: hsl(225, 80%, 25%);
+  --ribison-blue-800: hsl(225, 80%, 18%);
+  --ribison-blue-900: hsl(225, 80%, 12%);
+  
+  /* Accent: Gold - Premium, Quality, Excellence */
+  --ribison-gold: hsl(39, 85%, 59%);
+  --ribison-gold-50: hsl(39, 85%, 97%);
+  --ribison-gold-100: hsl(39, 85%, 94%);
+  --ribison-gold-200: hsl(39, 85%, 87%);
+  --ribison-gold-300: hsl(39, 85%, 78%);
+  --ribison-gold-400: hsl(39, 85%, 68%);
+  --ribison-gold-500: hsl(39, 85%, 59%);
+  --ribison-gold-600: hsl(39, 85%, 49%);
+  --ribison-gold-700: hsl(39, 85%, 39%);
+  --ribison-gold-800: hsl(39, 85%, 29%);
+  --ribison-gold-900: hsl(39, 85%, 19%);
+  
+  /* Supplementary Colors */
+  --ribison-green: hsl(142, 71%, 45%);
+  --ribison-green-50: hsl(142, 71%, 97%);
+  --ribison-green-100: hsl(142, 71%, 95%);
+  --ribison-green-200: hsl(142, 71%, 88%);
+  --ribison-green-300: hsl(142, 71%, 76%);
+  --ribison-green-400: hsl(142, 71%, 60%);
+  --ribison-green-500: hsl(142, 71%, 45%);
+  --ribison-green-600: hsl(142, 71%, 38%);
+  --ribison-green-700: hsl(142, 71%, 32%);
+  --ribison-green-800: hsl(142, 71%, 26%);
+  --ribison-green-900: hsl(142, 71%, 20%);
+  
+  /* Neutral Palette - Professional Grade */
+  --ribison-neutral-50: hsl(210, 40%, 98%);
+  --ribison-neutral-100: hsl(210, 40%, 96%);
+  --ribison-neutral-200: hsl(214, 32%, 91%);
+  --ribison-neutral-300: hsl(213, 27%, 84%);
+  --ribison-neutral-400: hsl(215, 20%, 65%);
+  --ribison-neutral-500: hsl(215, 16%, 46%);
+  --ribison-neutral-600: hsl(215, 19%, 35%);
+  --ribison-neutral-700: hsl(215, 25%, 27%);
+  --ribison-neutral-800: hsl(217, 33%, 17%);
+  --ribison-neutral-900: hsl(222, 84%, 5%);
+  
+  /* Semantic Colors */
+  --ribison-success: hsl(142, 71%, 45%);
+  --ribison-warning: hsl(39, 85%, 59%);
+  --ribison-error: hsl(0, 84%, 60%);
+  --ribison-info: hsl(201, 96%, 32%);
+  
+  /* Chemical Industry Specific Colors */
+  --ribison-platinum: hsl(0, 0%, 75%);
+  --ribison-silver: hsl(0, 0%, 88%);
+  --ribison-copper: hsl(16, 100%, 66%);
+  --ribison-steel: hsl(210, 11%, 71%);
+  
+  /* Text Color Variables */
+  --ribison-accent: hsl(39, 85%, 59%);
+  --ribison-body: hsl(215, 16%, 46%);
+  --ribison-dark: hsl(215, 25%, 15%);
+  
+  /* Premium Gradients - Logo Inspired */
+  --ribison-gradient-primary: linear-gradient(135deg, hsl(28, 100%, 55%) 0%, hsl(31, 97%, 72%) 100%);
+  --ribison-gradient-blue: linear-gradient(135deg, hsl(225, 80%, 45%) 0%, hsl(225, 80%, 60%) 100%);
+  --ribison-gradient-hero: linear-gradient(135deg, hsl(28, 100%, 55%) 0%, hsl(225, 80%, 45%) 50%, hsl(39, 85%, 59%) 100%);
+  --ribison-gradient-dark: linear-gradient(135deg, hsl(215, 25%, 15%) 0%, hsl(217, 33%, 17%) 100%);
+  
+  /* Shadow System */
+  --ribison-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --ribison-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --ribison-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --ribison-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --ribison-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --ribison-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --ribison-shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  
+  /* Professional Brand Elements */
+  --ribison-border-radius: 8px;
+  --ribison-border-radius-sm: 4px;
+  --ribison-border-radius-lg: 12px;
+  --ribison-border-radius-xl: 16px;
+  
+  /* Enhanced Typography Scale */
+  --ribison-font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --ribison-font-family-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --ribison-font-family-mono: 'JetBrains Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+  --ribison-font-family-display: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.dark {
+  /* Enhanced Dark Theme - Global Industry Standard for Chemical Companies */
+  --background: hsl(222, 84%, 4%);
+  --foreground: hsl(210, 40%, 98%);
+  --muted: hsl(217, 33%, 10%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --popover: hsl(217, 33%, 6%);
+  --popover-foreground: hsl(210, 40%, 98%);
+  --card: hsl(217, 33%, 6%);
+  --card-foreground: hsl(210, 40%, 98%);
+  --border: hsl(217, 33%, 15%);
+  --input: hsl(217, 33%, 15%);
+  --primary: hsl(28, 100%, 60%);
+  --primary-foreground: hsl(222, 84%, 4%);
+  --secondary: hsl(217, 33%, 12%);
+  --secondary-foreground: hsl(210, 40%, 98%);
+  --accent: hsl(39, 85%, 65%);
+  --accent-foreground: hsl(222, 84%, 4%);
+  --destructive: hsl(0, 84%, 65%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(28, 100%, 60%);
+  
+  /* Enhanced Dark Mode Ribison Brand Colors */
+  --ribison-primary: hsl(28, 100%, 60%);
+  --ribison-primary-50: hsl(28, 100%, 8%);
+  --ribison-primary-100: hsl(28, 100%, 12%);
+  --ribison-primary-200: hsl(29, 100%, 18%);
+  --ribison-primary-300: hsl(30, 100%, 25%);
+  --ribison-primary-400: hsl(31, 97%, 40%);
+  --ribison-primary-500: hsl(28, 100%, 60%);
+  --ribison-primary-600: hsl(25, 95%, 65%);
+  --ribison-primary-700: hsl(22, 78%, 70%);
+  --ribison-primary-800: hsl(20, 69%, 75%);
+  --ribison-primary-900: hsl(17, 56%, 80%);
+  
+  /* Dark Mode Blue Variants */
+  --ribison-blue: hsl(225, 80%, 55%);
+  --ribison-blue-50: hsl(225, 80%, 8%);
+  --ribison-blue-100: hsl(225, 80%, 12%);
+  --ribison-blue-200: hsl(225, 80%, 18%);
+  --ribison-blue-300: hsl(225, 80%, 25%);
+  --ribison-blue-400: hsl(225, 80%, 40%);
+  --ribison-blue-500: hsl(225, 80%, 55%);
+  --ribison-blue-600: hsl(225, 80%, 65%);
+  --ribison-blue-700: hsl(225, 80%, 70%);
+  --ribison-blue-800: hsl(225, 80%, 75%);
+  --ribison-blue-900: hsl(225, 80%, 80%);
+  
+  /* Dark Mode Gold Variants */
+  --ribison-gold: hsl(39, 85%, 65%);
+  --ribison-gold-50: hsl(39, 85%, 8%);
+  --ribison-gold-100: hsl(39, 85%, 12%);
+  --ribison-gold-200: hsl(39, 85%, 18%);
+  --ribison-gold-300: hsl(39, 85%, 25%);
+  --ribison-gold-400: hsl(39, 85%, 40%);
+  --ribison-gold-500: hsl(39, 85%, 65%);
+  --ribison-gold-600: hsl(39, 85%, 70%);
+  --ribison-gold-700: hsl(39, 85%, 75%);
+  --ribison-gold-800: hsl(39, 85%, 80%);
+  --ribison-gold-900: hsl(39, 85%, 85%);
+  
+  /* Dark Mode Neutral Palette */
+  --ribison-neutral-50: hsl(210, 40%, 98%);
+  --ribison-neutral-100: hsl(210, 40%, 95%);
+  --ribison-neutral-200: hsl(214, 32%, 85%);
+  --ribison-neutral-300: hsl(213, 27%, 75%);
+  --ribison-neutral-400: hsl(215, 20%, 65%);
+  --ribison-neutral-500: hsl(215, 16%, 46%);
+  --ribison-neutral-600: hsl(215, 19%, 35%);
+  --ribison-neutral-700: hsl(215, 25%, 27%);
+  --ribison-neutral-800: hsl(217, 33%, 17%);
+  --ribison-neutral-900: hsl(222, 84%, 4%);
+  
+  /* Enhanced Dark Mode Gradients */
+  --ribison-gradient-primary: linear-gradient(135deg, hsl(28, 100%, 60%) 0%, hsl(31, 97%, 65%) 100%);
+  --ribison-gradient-blue: linear-gradient(135deg, hsl(225, 80%, 55%) 0%, hsl(225, 80%, 65%) 100%);
+  --ribison-gradient-hero: linear-gradient(135deg, hsl(222, 84%, 4%) 0%, hsl(28, 100%, 15%) 20%, hsl(225, 80%, 15%) 50%, hsl(39, 85%, 15%) 80%, hsl(222, 84%, 4%) 100%);
+  --ribison-gradient-dark: linear-gradient(135deg, hsl(222, 84%, 4%) 0%, hsl(217, 33%, 6%) 100%);
+  
+  /* Enhanced Dark Mode Shadows */
+  --ribison-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --ribison-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  --ribison-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --ribison-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  --ribison-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.15);
+  --ribison-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+  --ribison-shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  
+  /* Dark Mode Text Color Variables */
+  --ribison-accent: hsl(39, 85%, 65%);
+  --ribison-body: hsl(215, 20%, 75%);
+  --ribison-dark: hsl(210, 40%, 98%);
+}
+
+/* Global Dark Mode Body Styling */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--background);
+    color: var(--foreground);
+  }
+}
+
+.dark body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Enhanced Accessibility and Focus Management */
+@layer base {
+  /* Skip Link for Screen Readers */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--ribison-primary);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: top 0.3s;
+  }
+
+  .skip-link:focus {
+    top: 6px;
+  }
+
+  /* Enhanced Focus Styles for Accessibility */
+  *:focus-visible {
+    outline: 2px solid var(--ribison-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* High Contrast Text for Better Readability */
+  .text-high-contrast {
+    color: var(--ribison-neutral-900);
+  }
+
+  .dark .text-high-contrast {
+    color: var(--ribison-neutral-100);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: var(--ribison-font-family-sans);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--ribison-font-family-heading);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: 2.75rem;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 2.25rem;
+    font-weight: 600;
+  }
+
+  p {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    transition: all 0.2s ease-in-out;
+  }
+
+  button {
+    font-family: var(--ribison-font-family-sans);
+    font-weight: 500;
+  }
+
+  input, textarea, select {
+    font-family: var(--ribison-font-family-sans);
+  }
+}
+
+@layer components {
+  /* Enhanced Typography Classes */
+  .font-display {
+    font-family: var(--ribison-font-family-display);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  .font-heading {
+    font-family: var(--ribison-font-family-heading);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+
+  .font-body {
+    font-family: var(--ribison-font-family-sans);
+    line-height: 1.6;
+  }
+
+  .font-mono {
+    font-family: var(--ribison-font-family-mono);
+  }
+
+  /* Professional Button System */
+  .btn-ribison {
+    @apply bg-ribison-primary text-white font-semibold py-3 px-6 rounded-lg;
+    @apply hover:bg-ribison-primary-600 dark:hover:bg-ribison-primary-400;
+    @apply transition-all duration-300 ease-in-out;
+    @apply shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+    @apply focus:outline-none focus:ring-2 focus:ring-ribison-primary focus:ring-offset-2;
+    background: var(--ribison-gradient-primary);
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border-2 border-ribison-primary text-ribison-primary;
+    @apply hover:bg-ribison-primary hover:text-white;
+    @apply font-semibold py-3 px-6 rounded-lg transition-all duration-300;
+    @apply shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+  }
+
+  .btn-outline {
+    @apply border border-ribison-neutral-300 text-ribison-neutral-700;
+    @apply hover:bg-ribison-neutral-50 hover:border-ribison-primary;
+    @apply dark:border-ribison-neutral-600 dark:text-ribison-neutral-300;
+    @apply dark:hover:bg-ribison-neutral-800 dark:hover:border-ribison-primary-400;
+    @apply font-medium py-2 px-4 rounded-md transition-all duration-200;
+  }
+
+  /* Professional Card System */
+  .card-elevated {
+    @apply bg-white dark:bg-ribison-neutral-800 rounded-xl shadow-lg;
+    @apply border border-ribison-neutral-200 dark:border-ribison-neutral-700;
+    @apply hover:shadow-xl transition-all duration-300;
+  }
+
+  .card-glass {
+    @apply backdrop-blur-lg bg-white/80 dark:bg-ribison-neutral-800/80;
+    @apply border border-white/20 dark:border-ribison-neutral-600/30;
+    @apply rounded-xl shadow-xl;
+  }
+
+  .card-feature {
+    @apply p-6 rounded-xl bg-white dark:bg-ribison-neutral-800;
+    @apply border border-ribison-neutral-200 dark:border-ribison-neutral-700;
+    @apply shadow-md hover:shadow-lg transition-all duration-300;
+    @apply hover:scale-105 transform;
+  }
+
+  /* Professional Animation Classes */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  /* Professional Gradient Backgrounds */
+  .bg-gradient-primary {
+    background: var(--ribison-gradient-primary);
+  }
+
+  .bg-gradient-blue {
+    background: var(--ribison-gradient-blue);
+  }
+
+  .bg-gradient-hero {
+    background: var(--ribison-gradient-hero);
+  }
+
+  .bg-gradient-dark {
+    background: var(--ribison-gradient-dark);
+  }
+
+  /* Professional Shadow System */
+  .shadow-ribison-sm {
+    box-shadow: var(--ribison-shadow-sm);
+  }
+
+  .shadow-ribison {
+    box-shadow: var(--ribison-shadow);
+  }
+
+  .shadow-ribison-md {
+    box-shadow: var(--ribison-shadow-md);
+  }
+
+  .shadow-ribison-lg {
+    box-shadow: var(--ribison-shadow-lg);
+  }
+
+  .shadow-ribison-xl {
+    box-shadow: var(--ribison-shadow-xl);
+  }
+
+  .shadow-ribison-2xl {
+    box-shadow: var(--ribison-shadow-2xl);
+  }
+
+  .shadow-ribison-inner {
+    box-shadow: var(--ribison-shadow-inner);
+  }
+}
+
+@layer utilities {
+  /* Professional Spacing System - Global Standard */
+  .space-micro { @apply space-y-1; }
+  .space-xs { @apply space-y-2; }
+  .space-sm { @apply space-y-3; }
+  .space-base { @apply space-y-4; }
+  .space-md { @apply space-y-6; }
+  .space-lg { @apply space-y-8; }
+  .space-xl { @apply space-y-12; }
+  .space-2xl { @apply space-y-16; }
+  .space-3xl { @apply space-y-20; }
+  .space-4xl { @apply space-y-24; }
+
+  /* Professional Padding System */
+  .p-micro { @apply p-1; }
+  .p-xs { @apply p-2; }
+  .p-sm { @apply p-3; }
+  .p-base { @apply p-4; }
+  .p-md { @apply p-6; }
+  .p-lg { @apply p-8; }
+  .p-xl { @apply p-12; }
+  .p-2xl { @apply p-16; }
+  .p-3xl { @apply p-20; }
+  .p-4xl { @apply p-24; }
+
+  /* Professional Margin System */
+  .m-micro { @apply m-1; }
+  .m-xs { @apply m-2; }
+  .m-sm { @apply m-3; }
+  .m-base { @apply m-4; }
+  .m-md { @apply m-6; }
+  .m-lg { @apply m-8; }
+  .m-xl { @apply m-12; }
+  .m-2xl { @apply m-16; }
+  .m-3xl { @apply m-20; }
+  .m-4xl { @apply m-24; }
+  
+  /* Professional Text Effects */
+  .text-shadow-sm {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .text-shadow-md {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+  }
+
+  /* Enhanced Glass Effects */
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Professional Form Styles */
+  .input-group {
+    @apply space-y-2;
+  }
+
+  .input-label {
+    @apply block text-sm font-medium text-ribison-neutral-700 dark:text-ribison-neutral-300;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-ribison-neutral-300 rounded-lg;
+    @apply focus:ring-2 focus:ring-ribison-primary focus:border-ribison-primary;
+    @apply transition-all duration-200 ease-in-out;
+    @apply bg-background text-foreground;
+    @apply focus-visible-enhanced;
+  }
+
+  .input-error {
+    @apply border-ribison-error focus:ring-ribison-error focus:border-ribison-error;
+  }
+
+  /* Performance Optimization Classes */
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .will-change-auto {
+    will-change: auto;
+  }
+
+  .gpu-accelerated {
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  /* Professional Navigation Styles */
+  .nav-link {
+    @apply text-ribison-neutral-700 hover:text-ribison-primary;
+    @apply dark:text-ribison-neutral-300 dark:hover:text-ribison-primary-400;
+    @apply font-medium transition-colors duration-200;
+  }
+
+  .nav-link-active {
+    @apply text-ribison-primary dark:text-ribison-primary-400;
+  }
+
+  /* Professional Utility Classes */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Enhanced Responsive Design Utilities for All Devices */
+  .container-responsive {
+    @apply max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 xl:px-12;
+  }
+
+  .grid-responsive {
+    @apply grid gap-3 xs:gap-4 sm:gap-6 lg:gap-8;
+  }
+
+  /* Enhanced Android-Specific Grid Systems */
+  .grid-android-responsive {
+    @apply grid gap-2 android-sm:gap-3 android-md:gap-4 android-lg:gap-5 tablet:gap-6;
+  }
+
+  .grid-android-cards {
+    @apply grid grid-cols-1 android-md:grid-cols-2 android-lg:grid-cols-2 tablet:grid-cols-3 gap-4;
+  }
+
+  /* Device-Specific Grid Systems */
+  .grid-mobile {
+    @apply grid grid-cols-1 gap-4;
+  }
+
+  .grid-mobile-2 {
+    @apply grid grid-cols-1 xs:grid-cols-2 gap-3 xs:gap-4;
+  }
+
+  .grid-tablet {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6;
+  }
+
+  /* Android Device Optimization */
+  .android-container {
+    @apply container-responsive android-sm:px-2 android-md:px-3 android-lg:px-4;
+  }
+
+  .android-text-scale {
+    @apply text-sm android-sm:text-base android-md:text-lg android-lg:text-xl;
+  }
+
+  .android-button-scale {
+    @apply px-3 py-2 android-sm:px-4 android-sm:py-2.5 android-md:px-5 android-md:py-3 android-lg:px-6 android-lg:py-3.5;
+  }
+
+  .android-spacing {
+    @apply space-y-2 android-sm:space-y-3 android-md:space-y-4 android-lg:space-y-6;
+  }
+
+  .grid-desktop {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6;
+  }
+
+  .grid-auto-fit-mobile {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .grid-auto-fit-tablet {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+
+  .grid-auto-fit-desktop {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  /* Responsive Text Sizing */
+  .text-responsive-xs {
+    @apply text-xs xs:text-sm sm:text-base;
+  }
+
+  .text-responsive-sm {
+    @apply text-sm xs:text-base sm:text-lg;
+  }
+
+  .text-responsive-base {
+    @apply text-base xs:text-lg sm:text-xl;
+  }
+
+  .text-responsive-lg {
+    @apply text-lg xs:text-xl sm:text-2xl lg:text-3xl;
+  }
+
+  .text-responsive-xl {
+    @apply text-xl xs:text-2xl sm:text-3xl lg:text-4xl xl:text-5xl;
+  }
+
+  .text-responsive-2xl {
+    @apply text-2xl xs:text-3xl sm:text-4xl lg:text-5xl xl:text-6xl;
+  }
+
+  .text-responsive-3xl {
+    @apply text-3xl xs:text-4xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl;
+  }
+
+  /* Device-Specific Spacing */
+  .spacing-mobile {
+    @apply space-y-3 xs:space-y-4 sm:space-y-6;
+  }
+
+  .spacing-tablet {
+    @apply space-y-4 lg:space-y-6 xl:space-y-8;
+  }
+
+  .spacing-desktop {
+    @apply space-y-6 xl:space-y-8 2xl:space-y-12;
+  }
+
+  /* Responsive Padding and Margins */
+  .p-responsive {
+    @apply p-3 xs:p-4 sm:p-6 lg:p-8 xl:p-12;
+  }
+
+  .py-responsive {
+    @apply py-4 xs:py-6 sm:py-8 lg:py-12 xl:py-16 2xl:py-20;
+  }
+
+  .px-responsive {
+    @apply px-3 xs:px-4 sm:px-6 lg:px-8 xl:px-12;
+  }
+
+  .m-responsive {
+    @apply m-2 xs:m-3 sm:m-4 lg:m-6 xl:m-8;
+  }
+
+  /* Professional Focus States */
+  .focus-visible-enhanced {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ribison-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
+  /* Enhanced Text Readability */
+  .text-readable {
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+
+  .text-heading-readable {
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Professional Animation Keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Professional Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Enhanced Android Device Media Resolution Display */
+/* Android Small (Galaxy S8, Pixel 2) - 360px */
+@media screen and (max-width: 360px) {
+  .android-sm-display {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .hero-android-sm {
+    padding: 1rem 0.75rem;
+    min-height: 60vh;
+  }
+  
+  .text-android-sm {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+  
+  .card-android-sm {
+    padding: 0.75rem;
+    margin: 0.25rem;
+  }
+  
+  .btn-android-sm {
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 0.375rem;
+  }
+}
+
+/* Android Medium (Pixel 3, Galaxy S9) - 412px */
+@media screen and (min-width: 361px) and (max-width: 412px) {
+  .android-md-display {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+  }
+  
+  .hero-android-md {
+    padding: 1.25rem 1rem;
+    min-height: 65vh;
+  }
+  
+  .text-android-md {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+  
+  .card-android-md {
+    padding: 1rem;
+    margin: 0.375rem;
+  }
+  
+  .btn-android-md {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9375rem;
+    border-radius: 0.5rem;
+  }
+  
+  .grid-android-md {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.75rem;
+  }
+}
+
+/* Android Large (Pixel 4 XL, Galaxy Note) - 432px */
+@media screen and (min-width: 413px) and (max-width: 432px) {
+  .android-lg-display {
+    font-size: 1.0625rem;
+    padding: 0.875rem 1.125rem;
+  }
+  
+  .hero-android-lg {
+    padding: 1.5rem 1.25rem;
+    min-height: 70vh;
+  }
+  
+  .text-android-lg {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+  
+  .card-android-lg {
+    padding: 1.25rem;
+    margin: 0.5rem;
+  }
+  
+  .btn-android-lg {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+  }
+  
+  .grid-android-lg {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+}
+
+/* Android Tablet (Galaxy Tab) - 768px to 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .android-tablet-display {
+    font-size: 1.125rem;
+    padding: 1rem 1.5rem;
+    word-spacing: 0.05em;
+    line-height: 1.6;
+  }
+  
+  .hero-android-tablet {
+    padding: 2rem 1.5rem;
+    min-height: 75vh;
+  }
+  
+  .text-android-tablet {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    word-spacing: 0.1em;
+    letter-spacing: 0.01em;
+  }
+  
+  .card-android-tablet {
+    padding: 1.5rem;
+    margin: 0.75rem;
+  }
+  
+  .btn-android-tablet {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    border-radius: 0.75rem;
+    margin: 0.5rem;
+  }
+  
+  .grid-android-tablet {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .spacing-tablet {
+    margin-bottom: 2rem;
+  }
+  
+  .container-tablet {
+    padding: 0 2rem;
+    max-width: 100%;
+  }
+  
+  .text-spacing-tablet {
+    margin-bottom: 1.5rem;
+    word-spacing: 0.05em;
+    line-height: 1.6;
+  }
+}
+
+/* Device-Specific Media Queries */
+/* iPhone SE and small Android phones */
+@media screen and (max-width: 320px) {
+  .hero-mobile-xs {
+    padding: 1rem 0.75rem;
+  }
+  
+  .text-hero-mobile {
+    font-size: 1.75rem;
+    line-height: 1.2;
+    word-spacing: 0.1em;
+    letter-spacing: 0.01em;
+  }
+  
+  .btn-mobile-xs {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    margin: 0.5rem 0;
+  }
+  
+  .spacing-mobile-xs {
+    margin-bottom: 1rem;
+  }
+  
+  .container-mobile-xs {
+    padding: 0 1rem;
+    max-width: 100%;
+  }
+}
+
+/* Standard iPhones and Android phones */
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .hero-mobile {
+    padding: 1.5rem 1rem;
+  }
+  
+  .text-hero-mobile {
+    font-size: 2rem;
+    line-height: 1.25;
+    word-spacing: 0.1em;
+    letter-spacing: 0.01em;
+  }
+  
+  .btn-mobile {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+  
+  .spacing-mobile {
+    margin-bottom: 1.5rem;
+  }
+  
+  .container-mobile {
+    padding: 0 1.25rem;
+    max-width: 100%;
+  }
+  
+  .text-spacing-mobile {
+    margin-bottom: 1rem;
+    word-spacing: 0.05em;
+  }
+}
+
+/* Large phones (iPhone Plus, Android Large) */
+@media screen and (min-width: 414px) and (max-width: 767px) {
+  .hero-mobile-lg {
+    padding: 2rem 1.25rem;
+  }
+  
+  .text-hero-mobile-lg {
+    font-size: 2.25rem;
+    line-height: 1.3;
+    word-spacing: 0.1em;
+    letter-spacing: 0.01em;
+  }
+  
+  .spacing-mobile-lg {
+    margin-bottom: 1.75rem;
+  }
+  
+  .container-mobile-lg {
+    padding: 0 1.5rem;
+    max-width: 100%;
+  }
+}
+
+/* Tablets (iPad, Android tablets) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .hero-tablet {
+    padding: 3rem 2rem;
+  }
+  
+  .text-hero-tablet {
+    font-size: 3rem;
+    line-height: 1.1;
+  }
+  
+  .grid-tablet-responsive {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* Laptops and small desktops */
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .hero-laptop {
+    padding: 4rem 2.5rem;
+  }
+  
+  .text-hero-laptop {
+    font-size: 4rem;
+    line-height: 1.1;
+  }
+}
+
+/* Large desktops and 4K displays */
+@media screen and (min-width: 1920px) {
+  .hero-4k {
+    padding: 6rem 3rem;
+  }
+  
+  .text-hero-4k {
+    font-size: 6rem;
+    line-height: 1;
+  }
+}
+
+/* Landscape orientation for mobile devices */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .hero-landscape {
+    min-height: 70vh;
+    padding: 2rem 1rem;
+  }
+  
+  .text-hero-landscape {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+}
+
+/* Universal Text Spacing and Readability */
+.text-readable {
+  word-spacing: 0.05em;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+}
+
+.text-heading-readable {
+  word-spacing: 0.1em;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+
+.spacing-consistent {
+  margin-bottom: 1rem;
+}
+
+.spacing-mobile {
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 640px) {
+  .spacing-mobile {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .spacing-mobile {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Container Classes for Consistent Spacing */
+.container-responsive {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+@media screen and (min-width: 640px) {
+  .container-responsive {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    max-width: 640px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container-responsive {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container-responsive {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 1024px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container-responsive {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 1280px;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .container-responsive {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 1536px;
+  }
+}
+
+/* Responsive Typography */
+.text-responsive-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-responsive-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-responsive-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-responsive-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-responsive-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-responsive-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+@media screen and (min-width: 640px) {
+  .text-responsive-sm {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  
+  .text-responsive-base {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  
+  .text-responsive-lg {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  
+  .text-responsive-xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  
+  .text-responsive-2xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  
+  .text-responsive-3xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .text-responsive-sm {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  
+  .text-responsive-base {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  
+  .text-responsive-lg {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  
+  .text-responsive-xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+  
+  .text-responsive-2xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+  
+  .text-responsive-3xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+}
+
+/* Responsive Spacing */
+.py-responsive {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media screen and (min-width: 640px) {
+  .py-responsive {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .py-responsive {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+/* Professional Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .text-readable,
+  .text-heading-readable {
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+}

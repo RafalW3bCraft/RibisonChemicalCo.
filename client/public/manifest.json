@@ -1,0 +1,28 @@
+{
+  "name": "Ribison Chemicals Company - Premium Chemical Manufacturing",
+  "short_name": "Ribison Chemicals",
+  "description": "Leading chemical manufacturing company specializing in premium industrial chemicals, laboratory reagents, and custom chemical solutions.",
+  "theme_color": "#ff8c00",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["business", "manufacturing", "chemicals"],
+  "lang": "en",
+  "dir": "ltr"
+}

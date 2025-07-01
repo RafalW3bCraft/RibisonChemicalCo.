@@ -1,0 +1,115 @@
+2025-07-01 08:06:35,318 - semgrep.notifications - WARNING - METRICS: Using configs from the Registry (like --config=p/ci) reports pseudonymous rule metrics to semgrep.dev.
+To disable Registry rule metrics, use "--metrics=off".
+Using configs only from local files (like --config=xyz.yml) does not enable metrics.
+
+More information: https://semgrep.dev/docs/metrics
+
+2025-07-01 08:06:35,321 - semgrep.run_scan - DEBUG - semgrep version 1.4.0
+2025-07-01 08:06:35,327 - semgrep.git - DEBUG - Failed to get project url from 'git ls-remote': Command failed with exit code: 128
+-----
+Command failed with output:
+fatal: No remote configured to list refs from.
+
+
+Failed to run 'git ls-remote --get-url'. Possible reasons:
+
+- the git binary is not available
+- the current working directory is not a git repository
+- the baseline commit is not a parent of the current commit
+    (if you are running through semgrep-app, check if you are setting `SEMGREP_BRANCH` or `SEMGREP_BASELINE_COMMIT` properly)
+- the current working directory is not marked as safe
+    (fix with `git config --global --add safe.directory $(pwd)`)
+
+Try running the command yourself to debug the issue.
+2025-07-01 08:06:35,384 - semgrep.config_resolver - DEBUG - Loading local config from /home/runner/workspace/.config/.semgrep/semgrep_rules.json
+2025-07-01 08:06:35,386 - semgrep.config_resolver - DEBUG - Done loading local config from /home/runner/workspace/.config/.semgrep/semgrep_rules.json
+2025-07-01 08:06:35,391 - semgrep.config_resolver - DEBUG - Saving rules to /tmp/semgrep-cb20nviz.rules
+2025-07-01 08:06:37,190 - semgrep.rule_lang - DEBUG - semgrep-core validation response: valid=True
+2025-07-01 08:06:37,190 - semgrep.rule_lang - DEBUG - semgrep-core validation succeeded
+2025-07-01 08:06:37,190 - semgrep.rule_lang - DEBUG - RPC validation succeeded
+2025-07-01 08:06:37,190 - semgrep.config_resolver - DEBUG - loaded 1 configs in 1.8070335388183594
+2025-07-01 08:06:37,271 - semgrep.run_scan - VERBOSE - running 715 rules from 1 config /home/runner/workspace/.config/.semgrep/semgrep_rules.json_0
+2025-07-01 08:06:37,272 - semgrep.run_scan - VERBOSE - No .semgrepignore found. Using default .semgrepignore rules. See the docs for the list of default ignores: https://semgrep.dev/docs/cli-usage/#ignore-files
+2025-07-01 08:06:37,274 - semgrep.run_scan - VERBOSE - Rules:
+2025-07-01 08:06:37,274 - semgrep.run_scan - VERBOSE - <SKIPPED DATA (too many entries; use --max-log-list-entries)>
+2025-07-01 08:06:37,769 - semgrep.core_runner - DEBUG - Passing whole rules directly to semgrep_core
+2025-07-01 08:06:37,967 - semgrep.core_runner - DEBUG - Running Semgrep engine with command:
+2025-07-01 08:06:37,967 - semgrep.core_runner - DEBUG - /tmp/_MEIDH5Emj/semgrep/bin/opengrep-core -json -rules /tmp/tmp92eexc82.json -j 8 -targets /tmp/tmplez0t8f3 -timeout 5 -timeout_threshold 3 -max_memory 0 -fast
+2025-07-01 08:06:49,454 - semgrep.core_runner - DEBUG - --- semgrep-core stderr ---
+[00.07][[34mINFO[0m]: Executed as: /tmp/_MEIDH5Emj/semgrep/bin/opengrep-core -json -rules /tmp/tmp92eexc82.json -j 8 -targets /tmp/tmplez0t8f3 -timeout 5 -timeout_threshold 3 -max_memory 0 -fast
+[00.07][[34mINFO[0m]: Version: 1.4.0
+[00.07][[34mINFO[0m]: Parsing rules in /tmp/tmp92eexc82.json
+[00.50][[34mINFO[0m]: scan: processing 292 files (skipping 0), with 457 rules (skipping 0 )
+--- end semgrep-core stderr ---
+2025-07-01 08:06:49,459 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('client/index.html'), 'config..semgrep.vendored-rules.html.security.audit.missing-integrity') match_id = 0ee74fd49637bebe183eca7188dbde26e386314e62cc2e7ba1ee60b377b638243fcd84e6c6fa04886198ccacfa6a711bfbcc61a28f9ddc913d5b3c53083cbc90_0
+2025-07-01 08:06:49,460 - semgrep.rule_match - DEBUG - match_key = (' type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" (?is).*integrity= (google-analytics\\.com|fonts\\.googleapis\\.com|fonts\\.gstatic\\.com|googletagmanager\\.com) .*rel\\s*=\\s*[\'"]?preconnect.* href="... :// ..." href="//..." href=\'... :// ...\' href=\'//...\' src="... :// ..." src="//..." src=\'... :// ...\' src=\'//...\' <link  type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" > <script  type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" >...</script>', PosixPath('client/index.html'), 'config..semgrep.vendored-rules.html.security.audit.missing-integrity') match_id = 0728b64e224596592d04447ba8a642ff94e1fb9fcc07be26d49dc7e7f6898e638ad16ffcaca086932c58f4c6400fe32603323afef02cf9bfebcb0e4a53562a40_0
+2025-07-01 08:06:49,460 - semgrep.rule_match - DEBUG - match_key = (' type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" (?is).*integrity= (google-analytics\\.com|fonts\\.googleapis\\.com|fonts\\.gstatic\\.com|googletagmanager\\.com) .*rel\\s*=\\s*[\'"]?preconnect.* href="... :// ..." href="//..." href=\'... :// ...\' href=\'//...\' src="... :// ..." src="//..." src=\'... :// ...\' src=\'//...\' <link  type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" > <script  type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" >...</script>', PosixPath('client/index.html'), 'config..semgrep.vendored-rules.html.security.audit.missing-integrity') match_id = 0728b64e224596592d04447ba8a642ff94e1fb9fcc07be26d49dc7e7f6898e638ad16ffcaca086932c58f4c6400fe32603323afef02cf9bfebcb0e4a53562a40_0
+2025-07-01 08:06:49,461 - semgrep.rule_match - DEBUG - match_key = (' type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" (?is).*integrity= (google-analytics\\.com|fonts\\.googleapis\\.com|fonts\\.gstatic\\.com|googletagmanager\\.com) .*rel\\s*=\\s*[\'"]?preconnect.* href="... :// ..." href="//..." href=\'... :// ...\' href=\'//...\' src="... :// ..." src="//..." src=\'... :// ...\' src=\'//...\' <link  type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" > <script  type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" >...</script>', PosixPath('client/index.html'), 'config..semgrep.vendored-rules.html.security.audit.missing-integrity') match_id = 0728b64e224596592d04447ba8a642ff94e1fb9fcc07be26d49dc7e7f6898e638ad16ffcaca086932c58f4c6400fe32603323afef02cf9bfebcb0e4a53562a40_0
+2025-07-01 08:06:49,462 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('client/src/components/TestimonialCard.tsx'), 'config..semgrep.vendored-rules.javascript.browser.security.insecure-innerhtml') match_id = a5646c2d9aadfbfdba95db406d786586c89c877bcacaf8d807d517f8f596b9ecdb1ceda60b65199cd993aba16add08cfe1f1148dddec5fa0e81967a24b525630_0
+2025-07-01 08:06:49,462 - semgrep.rule_match - DEBUG - match_key = ('parent.innerHTML = "...";\n parent.innerHTML = ``<span class="text-white font-bold text-lg">getInitials(name)</span>`;\n', PosixPath('client/src/components/TestimonialCard.tsx'), 'config..semgrep.vendored-rules.javascript.browser.security.insecure-innerhtml') match_id = d192ae59389afe4172492a4ba8140d8ba4ef1223c6be7c4247c51e79c3b4dfc5f40849272fe803991f2ede269f4c44e439d766d9ae10daaefe569a45247aeac5_0
+2025-07-01 08:06:49,462 - semgrep.rule_match - DEBUG - match_key = ('parent.innerHTML = "...";\n parent.innerHTML = ``<span class="text-white font-bold text-lg">getInitials(name)</span>`;\n', PosixPath('client/src/components/TestimonialCard.tsx'), 'config..semgrep.vendored-rules.javascript.browser.security.insecure-innerhtml') match_id = d192ae59389afe4172492a4ba8140d8ba4ef1223c6be7c4247c51e79c3b4dfc5f40849272fe803991f2ede269f4c44e439d766d9ae10daaefe569a45247aeac5_0
+2025-07-01 08:06:49,463 - semgrep.rule_match - DEBUG - match_key = ('parent.innerHTML = "...";\n parent.innerHTML = ``<span class="text-white font-bold text-lg">getInitials(name)</span>`;\n', PosixPath('client/src/components/TestimonialCard.tsx'), 'config..semgrep.vendored-rules.javascript.browser.security.insecure-innerhtml') match_id = d192ae59389afe4172492a4ba8140d8ba4ef1223c6be7c4247c51e79c3b4dfc5f40849272fe803991f2ede269f4c44e439d766d9ae10daaefe569a45247aeac5_0
+2025-07-01 08:06:49,463 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('client/src/components/TestimonialCard.tsx'), 'config..semgrep.vendored-rules.javascript.browser.security.insecure-document-method') match_id = 9436e0bc221854eb9d62fac0a02aa2e57c9c6b513aca66142fd6385c3626e870ec12c3b02de555037829af56ba36b1bc6299015146a900b3957a3179b428a8ac_0
+2025-07-01 08:06:49,464 - semgrep.rule_match - DEBUG - match_key = ('parent.innerHTML = "...";\n parent.innerHTML = ``<span class="text-white font-bold text-lg">getInitials(name)</span>`;\n parent.outerHTML = ``<span class="text-white font-bold text-lg">getInitials(name)</span>`;\n document.write(...) parent.outerHTML = "...";\n document.write("...")', PosixPath('client/src/components/TestimonialCard.tsx'), 'config..semgrep.vendored-rules.javascript.browser.security.insecure-document-method') match_id = dbdd0264f0ba53eb100004514cb450ca369dd4a2396fafbc27152c970d3a00f55cf385d47550bd31d130995a075b6c990116fd3e16376aa48b9f263ea1c1c8c7_0
+2025-07-01 08:06:49,464 - semgrep.rule_match - DEBUG - match_key = ('parent.innerHTML = "...";\n parent.innerHTML = ``<span class="text-white font-bold text-lg">getInitials(name)</span>`;\n parent.outerHTML = ``<span class="text-white font-bold text-lg">getInitials(name)</span>`;\n document.write(...) parent.outerHTML = "...";\n document.write("...")', PosixPath('client/src/components/TestimonialCard.tsx'), 'config..semgrep.vendored-rules.javascript.browser.security.insecure-document-method') match_id = dbdd0264f0ba53eb100004514cb450ca369dd4a2396fafbc27152c970d3a00f55cf385d47550bd31d130995a075b6c990116fd3e16376aa48b9f263ea1c1c8c7_0
+2025-07-01 08:06:49,465 - semgrep.rule_match - DEBUG - match_key = ('parent.innerHTML = "...";\n parent.innerHTML = ``<span class="text-white font-bold text-lg">getInitials(name)</span>`;\n parent.outerHTML = ``<span class="text-white font-bold text-lg">getInitials(name)</span>`;\n document.write(...) parent.outerHTML = "...";\n document.write("...")', PosixPath('client/src/components/TestimonialCard.tsx'), 'config..semgrep.vendored-rules.javascript.browser.security.insecure-document-method') match_id = dbdd0264f0ba53eb100004514cb450ca369dd4a2396fafbc27152c970d3a00f55cf385d47550bd31d130995a075b6c990116fd3e16376aa48b9f263ea1c1c8c7_0
+2025-07-01 08:06:49,465 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('client/src/components/TestimonialCard.tsx'), 'config..semgrep.vendored-rules.javascript.lang.security.html-in-template-string') match_id = ac71ebb3ae4ba70fe101f0f0497294915a864bd6ba6250fc772baedc236c331863139e2604c08d70e8f0c1ba37ed37898bb2f9fa389356d67ef12161dc23fd54_0
+2025-07-01 08:06:49,466 - semgrep.rule_match - DEBUG - match_key = ('<span class="text-white font-bold text-lg"> .*</?[a-zA-Z] `<span class="text-white font-bold text-lg">${getInitials(name)}...`\n `...${getInitials(name)}<span class="text-white font-bold text-lg">`\n', PosixPath('client/src/components/TestimonialCard.tsx'), 'config..semgrep.vendored-rules.javascript.lang.security.html-in-template-string') match_id = 310224a2be6597af9e236db6d8606118ea7d0599a9b00a55cbc9d56a67b317b532d398cfd3f14c92f3e15121b1650a4efcc3825359c98a931a841bb5e9b729d6_0
+2025-07-01 08:06:49,466 - semgrep.rule_match - DEBUG - match_key = ('<span class="text-white font-bold text-lg"> .*</?[a-zA-Z] `<span class="text-white font-bold text-lg">${getInitials(name)}...`\n `...${getInitials(name)}<span class="text-white font-bold text-lg">`\n', PosixPath('client/src/components/TestimonialCard.tsx'), 'config..semgrep.vendored-rules.javascript.lang.security.html-in-template-string') match_id = 310224a2be6597af9e236db6d8606118ea7d0599a9b00a55cbc9d56a67b317b532d398cfd3f14c92f3e15121b1650a4efcc3825359c98a931a841bb5e9b729d6_0
+2025-07-01 08:06:49,466 - semgrep.rule_match - DEBUG - match_key = ('<span class="text-white font-bold text-lg"> .*</?[a-zA-Z] `<span class="text-white font-bold text-lg">${getInitials(name)}...`\n `...${getInitials(name)}<span class="text-white font-bold text-lg">`\n', PosixPath('client/src/components/TestimonialCard.tsx'), 'config..semgrep.vendored-rules.javascript.lang.security.html-in-template-string') match_id = 310224a2be6597af9e236db6d8606118ea7d0599a9b00a55cbc9d56a67b317b532d398cfd3f14c92f3e15121b1650a4efcc3825359c98a931a841bb5e9b729d6_0
+2025-07-01 08:06:49,467 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('server/routes.ts'), 'config..semgrep.vendored-rules.javascript.lang.security.detect-child-process') match_id = 4c2cc6c1560985ba924c9880092118ed8d1852d94753518bb9c8090dab5bb2544fd9d8651619aff53c1ecb2742f1a04b81e7d7aab427532cadc0b4d6d9ac58e1_0
+2025-07-01 08:06:49,467 - semgrep.rule_match - DEBUG - match_key = ('``php "phpScript" \'emailData\'` ``php "phpScript" \'emailData\'` = "..."\n...\n ``php "phpScript" \'emailData\'` = ["...",...]\n...\n $CP = require(\'child_process\')\n...\n import $CP from \'child_process\'\n...\n import * as $CP from \'child_process\'\n...\n $CP.$EXEC("...",...) $CP.$EXEC(["...",...],...) $CP.exec(``php "phpScript" \'emailData\'`,...) $CP.execSync(``php "phpScript" \'emailData\'`,...) $CP.spawn(``php "phpScript" \'emailData\'`,...) $CP.spawnSync(``php "phpScript" \'emailData\'`,...) ``php "phpScript" \'emailData\'` ``php "phpScript" \'emailData\'` = "..."\n...\n ``php "phpScript" \'emailData\'` = ["...",...]\n...\n child_process.$EXEC("...",...) child_process.$EXEC(["...",...],...) child_process.exec(``php "phpScript" \'emailData\'`,...) child_process.execSync(``php "phpScript" \'emailData\'`,...) child_process.spawn(``php "phpScript" \'emailData\'`,...) child_process.spawnSync(``php "phpScript" \'emailData\'`,...) req function ... (...,req,...) {\n  ...\n}\n', PosixPath('server/routes.ts'), 'config..semgrep.vendored-rules.javascript.lang.security.detect-child-process') match_id = 7cddd2fe327ae670645d4589a45c222c970a74182344255302554e3b7348a3160899eb177dbe02fdb1f02fe136800c7305c43d0d6b76db563078a33073606bf0_0
+2025-07-01 08:06:49,468 - semgrep.rule_match - DEBUG - match_key = ('``php "phpScript" \'emailData\'` ``php "phpScript" \'emailData\'` = "..."\n...\n ``php "phpScript" \'emailData\'` = ["...",...]\n...\n $CP = require(\'child_process\')\n...\n import $CP from \'child_process\'\n...\n import * as $CP from \'child_process\'\n...\n $CP.$EXEC("...",...) $CP.$EXEC(["...",...],...) $CP.exec(``php "phpScript" \'emailData\'`,...) $CP.execSync(``php "phpScript" \'emailData\'`,...) $CP.spawn(``php "phpScript" \'emailData\'`,...) $CP.spawnSync(``php "phpScript" \'emailData\'`,...) ``php "phpScript" \'emailData\'` ``php "phpScript" \'emailData\'` = "..."\n...\n ``php "phpScript" \'emailData\'` = ["...",...]\n...\n child_process.$EXEC("...",...) child_process.$EXEC(["...",...],...) child_process.exec(``php "phpScript" \'emailData\'`,...) child_process.execSync(``php "phpScript" \'emailData\'`,...) child_process.spawn(``php "phpScript" \'emailData\'`,...) child_process.spawnSync(``php "phpScript" \'emailData\'`,...) req function ... (...,req,...) {\n  ...\n}\n', PosixPath('server/routes.ts'), 'config..semgrep.vendored-rules.javascript.lang.security.detect-child-process') match_id = 7cddd2fe327ae670645d4589a45c222c970a74182344255302554e3b7348a3160899eb177dbe02fdb1f02fe136800c7305c43d0d6b76db563078a33073606bf0_0
+2025-07-01 08:06:49,468 - semgrep.rule_match - DEBUG - match_key = ('``php "phpScript" \'emailData\'` ``php "phpScript" \'emailData\'` = "..."\n...\n ``php "phpScript" \'emailData\'` = ["...",...]\n...\n $CP = require(\'child_process\')\n...\n import $CP from \'child_process\'\n...\n import * as $CP from \'child_process\'\n...\n $CP.$EXEC("...",...) $CP.$EXEC(["...",...],...) $CP.exec(``php "phpScript" \'emailData\'`,...) $CP.execSync(``php "phpScript" \'emailData\'`,...) $CP.spawn(``php "phpScript" \'emailData\'`,...) $CP.spawnSync(``php "phpScript" \'emailData\'`,...) ``php "phpScript" \'emailData\'` ``php "phpScript" \'emailData\'` = "..."\n...\n ``php "phpScript" \'emailData\'` = ["...",...]\n...\n child_process.$EXEC("...",...) child_process.$EXEC(["...",...],...) child_process.exec(``php "phpScript" \'emailData\'`,...) child_process.execSync(``php "phpScript" \'emailData\'`,...) child_process.spawn(``php "phpScript" \'emailData\'`,...) child_process.spawnSync(``php "phpScript" \'emailData\'`,...) req function ... (...,req,...) {\n  ...\n}\n', PosixPath('server/routes.ts'), 'config..semgrep.vendored-rules.javascript.lang.security.detect-child-process') match_id = 7cddd2fe327ae670645d4589a45c222c970a74182344255302554e3b7348a3160899eb177dbe02fdb1f02fe136800c7305c43d0d6b76db563078a33073606bf0_0
+2025-07-01 08:06:49,470 - semgrep.core_runner - DEBUG - semgrep ran in 0:00:11.700988 on 100 files
+2025-07-01 08:06:49,471 - semgrep.core_runner - DEBUG - findings summary: 2 warning, 3 error, 0 info
+2025-07-01 08:06:49,474 - semgrep.app.auth - DEBUG - Getting API token from settings file
+2025-07-01 08:06:49,474 - semgrep.app.auth - DEBUG - No API token found in settings file
+2025-07-01 08:06:49,587 - semgrep.output - VERBOSE - 
+========================================
+Files skipped:
+========================================
+
+  Always skipped by Opengrep:
+
+   • <none>
+
+  Skipped by .gitignore:
+  (Disable by passing --no-git-ignore)
+
+   • <all files not listed by `git ls-files` were skipped>
+
+  Skipped by .semgrepignore:
+  - https://semgrep.dev/docs/ignoring-files-folders-code/#understand-semgrep-defaults
+
+   • <none>
+
+  Skipped by --include patterns:
+
+   • <none>
+
+  Skipped by --exclude patterns:
+
+   • <none>
+
+  Files skipped due to insufficient read permissions:
+
+   • <none>
+
+  Skipped by limiting to files smaller than 1000000 bytes:
+  (Adjust with the --max-target-bytes flag)
+
+   • <none>
+
+  Partially analyzed due to parsing or internal Opengrep errors
+
+   • client/index.html (1 lines skipped)
+   • tailwind.config.ts (1 lines skipped)
+
+2025-07-01 08:06:49,588 - semgrep.output - INFO - Some files were skipped or only partially analyzed.
+  Scan was limited to files tracked by git.
+  Partially scanned: 2 files only partially analyzed due to parsing or internal Opengrep errors
+
+Ran 438 rules on 100 files: 5 findings.
+2025-07-01 08:06:49,588 - semgrep.app.version - DEBUG - Version cache does not exist
+2025-07-01 08:06:49,602 - semgrep.metrics - VERBOSE - Not sending pseudonymous metrics since metrics are configured to OFF and registry usage is False
