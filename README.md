@@ -1,4 +1,5 @@
 # Ribison Chemicals - Corporate Website
+<!-- GitAds-Verify: CPKSV6DCXLVHUHT2RTW5J8PF8ZNNGJER -->
 
 A modern, professional website for Ribison Chemicals Company featuring comprehensive responsive design, contact form functionality, and email integration.
 
