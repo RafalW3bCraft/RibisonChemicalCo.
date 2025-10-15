@@ -20,7 +20,6 @@ export default function StatsSection() {
           if (entry.isIntersecting && !hasAnimated) {
             setHasAnimated(true);
             
-            // Animate counters
             const counters = entry.target.querySelectorAll('.counter');
             counters.forEach((counter, index) => {
               const target = stats[index].target;

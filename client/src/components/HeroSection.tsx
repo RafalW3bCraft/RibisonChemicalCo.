@@ -12,13 +12,10 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen hero-landscape android-sm:min-h-[80vh] android-md:min-h-[85vh] android-lg:min-h-[90vh] tablet:min-h-screen flex items-center overflow-hidden">
-      {/* Enhanced Background with Theme-aware Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-ribison-primary via-ribison-blue to-ribison-gold dark:from-ribison-neutral-900 dark:via-ribison-neutral-800 dark:to-ribison-neutral-900"></div>
 
-      {/* Theme-aware Glass Morphism Overlay - Responsive for all devices */}
       <div className="absolute inset-0 bg-black/15 android-sm:bg-black/18 android-md:bg-black/20 android-lg:bg-black/22 tablet:bg-black/20 dark:bg-black/30 dark:android-sm:bg-black/35 dark:android-md:bg-black/40 dark:android-lg:bg-black/42 dark:tablet:bg-black/40 backdrop-blur-sm android-sm:backdrop-blur android-md:backdrop-blur-md"></div>
 
-      {/* Enhanced Floating Elements with Theme Support - Hidden on small screens */}
       <div className="hidden sm:block absolute top-20 left-10 w-12 sm:w-16 lg:w-20 h-12 sm:h-16 lg:h-20 bg-white/10 dark:bg-ribison-primary/20 rounded-full animate-float"></div>
       <div className="hidden md:block absolute top-32 right-20 w-12 sm:w-14 lg:w-16 h-12 sm:h-14 lg:h-16 bg-ribison-blue/20 dark:bg-ribison-blue/30 rounded-full animate-float" style={{animationDelay: '1s'}}></div>
       <div className="hidden lg:block absolute bottom-40 left-1/4 w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 bg-ribison-gold/20 dark:bg-ribison-gold/30 rounded-full animate-float" style={{animationDelay: '2s'}}></div>
@@ -112,7 +109,6 @@ export default function HeroSection() {
             </Button>
           </motion.div>
 
-          {/* Key Features */}
           <motion.div 
             className="mt-6 xs:mt-8 sm:mt-10 md:mt-14 lg:mt-16
                        /* Mobile-first grid layout */
@@ -139,7 +135,6 @@ export default function HeroSection() {
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
             transition={{ duration: 0.8, delay: 0.7 }}
           >
-            {/* ISO Certified Card */}
             <div className="group bg-white/25 dark:bg-ribison-neutral-800/60 backdrop-blur-md 
                            /* Responsive padding */
                            p-5 xs:p-6 sm:p-6 md:p-5 lg:p-6 xl:p-8
@@ -205,7 +200,6 @@ export default function HeroSection() {
               </p>
             </div>
 
-            {/* Eco-Friendly Card */}
             <div className="group bg-white/25 dark:bg-ribison-neutral-800/60 backdrop-blur-md 
                            /* Responsive padding */
                            p-5 xs:p-6 sm:p-6 md:p-5 lg:p-6 xl:p-8
@@ -270,7 +264,6 @@ export default function HeroSection() {
               </p>
             </div>
 
-            {/* Fast Delivery Card */}
             <div className="group bg-white/25 dark:bg-ribison-neutral-800/60 backdrop-blur-md 
                            /* Responsive padding */
                            p-5 xs:p-6 sm:p-6 md:p-5 lg:p-6 xl:p-8
@@ -338,7 +331,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Animated Scroll Indicator */}
       <motion.div 
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         animate={{ y: [0, -10, 0] }}

@@ -5,15 +5,14 @@ export default {
   content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     screens: {
-      'xs': '320px',      // Small phones (iPhone SE, Android compact)
-      'sm': '375px',      // Standard phones (iPhone 12/13/14, most Android)
-      'md': '390px',      // Large phones (iPhone 14 Pro Max, Android large)
-      'lg': '768px',      // Tablets (iPad, Android tablets)
-      'xl': '1024px',     // Small laptops
-      '2xl': '1280px',    // Large laptops/desktops
-      '3xl': '1536px',    // Ultra-wide displays
-      '4xl': '1920px',    // 4K displays
-      // Device-specific breakpoints
+      'xs': '320px',
+      'sm': '375px',
+      'md': '390px',
+      'lg': '768px',
+      'xl': '1024px',
+      '2xl': '1280px',
+      '3xl': '1536px',
+      '4xl': '1920px',
       'iphone-se': '320px',
       'iphone': '375px',
       'iphone-plus': '414px',
@@ -83,7 +82,6 @@ export default {
           border: "var(--sidebar-border)",
           ring: "var(--sidebar-ring)",
         },
-        // Enhanced Ribison Brand Colors for Tailwind
         ribison: {
           primary: {
             50: "var(--ribison-primary-50)",

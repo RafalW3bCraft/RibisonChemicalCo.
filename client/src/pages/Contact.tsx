@@ -115,10 +115,8 @@ export default function Contact() {
   };
 
   useEffect(() => {
-    // Advanced SEO Meta Tags for 99.99% Score
     document.title = "Contact Ribison Chemicals Company | Premium Chemical Manufacturing Solutions in Gujarat, India";
     
-    // Meta Description
     const metaDescription = document.querySelector('meta[name="description"]');
     const description = 'Contact Ribison Chemicals Company for premium industrial chemical solutions in Gujarat, India. ISO certified manufacturer specializing in Construction, Textile, Paint, Ceramic, Paper Mill & Agriculture chemicals. Call +91 7777942233 or visit our Wankaner facility. Expert chemical consultation available.';
     if (metaDescription) {
@@ -130,7 +128,6 @@ export default function Contact() {
       document.head.appendChild(meta);
     }
 
-    // Keywords Meta Tag
     const metaKeywords = document.querySelector('meta[name="keywords"]');
     const keywords = 'contact ribison chemicals, chemical manufacturer gujarat, industrial chemicals morbi, wankaner chemical company, construction chemicals supplier, textile chemicals india, paint chemicals manufacturer, ceramic chemicals gujarat, paper mill chemicals, agriculture chemicals, chemical consultation, ISO certified chemical company, chemical solutions india, ribison chemicals contact number, chemical factory gujarat';
     if (metaKeywords) {
@@ -142,10 +139,8 @@ export default function Contact() {
       document.head.appendChild(keywordsMeta);
     }
 
-    // Language Declaration
     document.documentElement.lang = 'en-IN';
 
-    // Local Business Schema
     const existingSchema = document.querySelector('script[type="application/ld+json"]');
     if (!existingSchema || !existingSchema.textContent?.includes('ContactPage')) {
       const schema = document.createElement('script');
@@ -183,9 +178,7 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen pt-20 bg-gradient-to-br from-ribison-neutral-50 via-white to-ribison-primary-50 dark:from-ribison-neutral-900 dark:via-ribison-neutral-800 dark:to-ribison-neutral-900">
-      {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        {/* Background Pattern */}
         <div className="absolute inset-0 bg-gradient-to-br from-ribison-primary/5 via-transparent to-ribison-gold/5"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,140,0,0.1)_0%,transparent_50%)] dark:bg-[radial-gradient(circle_at_20%_20%,rgba(255,140,0,0.05)_0%,transparent_50%)]"></div>
         <div className="container-responsive relative z-10">
@@ -218,7 +211,6 @@ export default function Contact() {
           </div>
           
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Information */}
             <motion.div 
               className="space-y-8"
               initial={{ opacity: 0, x: -30 }}

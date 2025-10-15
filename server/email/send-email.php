@@ -1,18 +1,7 @@
 <?php
-/**
- * Ribison Chemicals Contact Form Email Handler
- * Professional email system for contact form submissions
- * 
- * This script handles email notifications when users submit the contact form
- * Features:
- * - Professional HTML email templates
- * - SMTP configuration for reliable delivery
- * - Error handling and logging
- * - Responsive email design
- * - Company branding integration
- */
 
-// Include PHPMailer classes
+
+
 require_once __DIR__ . '/PHPMailer.php';
 require_once __DIR__ . '/SMTP.php';
 require_once __DIR__ . '/Exception.php';
@@ -21,34 +10,34 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-// Get JSON data from command line argument
+
 $json_data = $argv[1] ?? '{}';
 $data = json_decode($json_data, true);
 
-// Validate required data
+
 if (!$data || !isset($data['name']) || !isset($data['email']) || !isset($data['message'])) {
     error_log('Invalid email data received: ' . $json_data);
     exit(1);
 }
 
-// Email configuration - these should be set as environment variables in production
+
 $smtp_host = $_ENV['SMTP_HOST'] ?? 'smtp.gmail.com';
 $smtp_port = $_ENV['SMTP_PORT'] ?? 587;
 $smtp_username = $_ENV['SMTP_USERNAME'] ?? '';
 $smtp_password = $_ENV['SMTP_PASSWORD'] ?? '';
 $smtp_encryption = $_ENV['SMTP_ENCRYPTION'] ?? 'tls';
 
-// Company information
+
 $company_name = 'Ribison Chemicals';
 $company_email = $_ENV['COMPANY_EMAIL'] ?? 'info@ribisonchemicals.com';
 $company_phone = '+91 2822 220491';
 $company_address = 'Wankaner, Morbi, Gujarat, India';
 
 try {
-    // Create a new PHPMailer instance
+    
     $mail = new PHPMailer(true);
 
-    // Server settings
+    
     $mail->isSMTP();
     $mail->Host = $smtp_host;
     $mail->SMTPAuth = true;
@@ -57,33 +46,33 @@ try {
     $mail->SMTPSecure = $smtp_encryption;
     $mail->Port = $smtp_port;
     
-    // Enable debugging in development
+    
     if (isset($_ENV['NODE_ENV']) && $_ENV['NODE_ENV'] === 'development') {
         $mail->SMTPDebug = SMTP::DEBUG_SERVER;
         $mail->Debugoutput = 'error_log';
     }
 
-    // Recipients
+    
     $mail->setFrom($company_email, $company_name);
     $mail->addAddress($company_email, $company_name);
     $mail->addReplyTo($data['email'], $data['name']);
 
-    // Content
+    
     $mail->isHTML(true);
     $mail->CharSet = 'UTF-8';
     $mail->Subject = 'New Contact Form Submission - ' . $company_name;
 
-    // Create professional HTML email template
+    
     $html_body = createHtmlEmailTemplate($data, $company_name, $company_email, $company_phone, $company_address);
     $mail->Body = $html_body;
 
-    // Create plain text version
+    
     $mail->AltBody = createPlainTextEmail($data, $company_name);
 
-    // Send the email
+    
     $mail->send();
     
-    // Log success
+    
     error_log('Email sent successfully for contact form submission from: ' . $data['email']);
     echo 'Email sent successfully';
     exit(0);
@@ -94,9 +83,7 @@ try {
     exit(1);
 }
 
-/**
- * Create professional HTML email template
- */
+
 function createHtmlEmailTemplate($data, $company_name, $company_email, $company_phone, $company_address) {
     $name = htmlspecialchars($data['name']);
     $email = htmlspecialchars($data['email']);
@@ -318,9 +305,7 @@ function createHtmlEmailTemplate($data, $company_name, $company_email, $company_
 HTML;
 }
 
-/**
- * Create plain text email version
- */
+
 function createPlainTextEmail($data, $company_name) {
     $name = $data['name'];
     $email = $data['email'];

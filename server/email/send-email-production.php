@@ -1,8 +1,5 @@
 <?php
-/**
- * Production Email Handler for Ribison Chemicals
- * Handles contact form submissions with professional email templates
- */
+
 
 require_once __DIR__ . '/PHPMailer-fixed.php';
 require_once __DIR__ . '/SMTP.php';
@@ -12,18 +9,18 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-// Get JSON data from command line
+
 $json_data = $argv[1] ?? '{}';
 $data = json_decode($json_data, true);
 
-// Validate input data
+
 if (!$data || !isset($data['name']) || !isset($data['email']) || !isset($data['message'])) {
     error_log('Email Error: Invalid or missing data - ' . $json_data);
     echo json_encode(['success' => false, 'error' => 'Invalid data']);
     exit(1);
 }
 
-// Configuration from environment variables
+
 $config = [
     'smtp_host' => $_ENV['SMTP_HOST'] ?? 'smtp.gmail.com',
     'smtp_port' => (int)($_ENV['SMTP_PORT'] ?? 587),
@@ -34,7 +31,7 @@ $config = [
     'debug_mode' => ($_ENV['NODE_ENV'] ?? 'production') === 'development'
 ];
 
-// Company information
+
 $company = [
     'name' => 'Ribison Chemicals',
     'email' => $config['company_email'],
@@ -44,10 +41,10 @@ $company = [
 ];
 
 try {
-    // Create PHPMailer instance
+    
     $mail = new PHPMailer(true);
     
-    // SMTP Configuration
+    
     $mail->isSMTP();
     $mail->Host = $config['smtp_host'];
     $mail->SMTPAuth = true;
@@ -57,30 +54,30 @@ try {
     $mail->Port = $config['smtp_port'];
     $mail->CharSet = PHPMailer::CHARSET_UTF8;
     
-    // Debug settings for development
+    
     if ($config['debug_mode']) {
         $mail->SMTPDebug = SMTP::DEBUG_SERVER;
         error_log('Email Debug: Sending in development mode');
     }
 
-    // Email settings
+    
     $mail->setFrom($company['email'], $company['name']);
     $mail->addAddress($company['email'], $company['name'] . ' Team');
     
-    // Add reply-to using customer's email
+    
     if (PHPMailer::validateAddress($data['email'])) {
         $mail->addReplyTo($data['email'], $data['name']);
     }
 
-    // Email content
+    
     $mail->isHTML(true);
     $mail->Subject = 'New Contact Form Submission - ' . $company['name'];
     
-    // Generate professional email templates
+    
     $mail->Body = generateHtmlEmail($data, $company);
     $mail->AltBody = generatePlainTextEmail($data, $company);
 
-    // Send the email
+    
     $result = $mail->send();
     
     if ($result) {
@@ -106,9 +103,7 @@ try {
     exit(1);
 }
 
-/**
- * Generate professional HTML email template
- */
+
 function generateHtmlEmail($data, $company) {
     $name = htmlspecialchars($data['name'], ENT_QUOTES, 'UTF-8');
     $email = htmlspecialchars($data['email'], ENT_QUOTES, 'UTF-8');
@@ -371,9 +366,7 @@ function generateHtmlEmail($data, $company) {
 HTML;
 }
 
-/**
- * Generate plain text email version
- */
+
 function generatePlainTextEmail($data, $company) {
     $name = $data['name'];
     $email = $data['email'];

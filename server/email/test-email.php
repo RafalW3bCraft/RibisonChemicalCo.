@@ -1,17 +1,7 @@
 <?php
-/**
- * Comprehensive Email System Test Script
- * Tests the complete email functionality for Ribison Chemicals contact form
- * 
- * This script performs thorough testing of:
- * - PHPMailer class functionality
- * - SMTP connection and authentication
- * - Email template generation
- * - Error handling and logging
- * - Production readiness verification
- */
 
-// Include required files
+
+
 require_once __DIR__ . '/PHPMailer.php';
 require_once __DIR__ . '/SMTP.php';
 require_once __DIR__ . '/Exception.php';
@@ -25,7 +15,7 @@ echo "===========================================\n";
 echo "Ribison Chemicals Email System Test Suite\n";
 echo "===========================================\n\n";
 
-// Test Data
+
 $test_data = [
     'name' => 'Test User - Email System Verification',
     'email' => 'test@example.com',
@@ -38,7 +28,7 @@ $test_data = [
 $tests_passed = 0;
 $tests_failed = 0;
 
-// Test 1: PHPMailer Class Instantiation
+
 echo "Test 1: PHPMailer Class Instantiation\n";
 echo "-------------------------------------\n";
 try {
@@ -51,7 +41,7 @@ try {
 }
 echo "\n";
 
-// Test 2: SMTP Class Functionality
+
 echo "Test 2: SMTP Class Functionality\n";
 echo "--------------------------------\n";
 try {
@@ -66,7 +56,7 @@ try {
 }
 echo "\n";
 
-// Test 3: Email Address Validation
+
 echo "Test 3: Email Address Validation\n";
 echo "--------------------------------\n";
 $test_emails = [
@@ -89,7 +79,7 @@ foreach ($test_emails as $email => $expected) {
 }
 echo "\n";
 
-// Test 4: HTML Email Template Generation
+
 echo "Test 4: HTML Email Template Generation\n";
 echo "-------------------------------------\n";
 try {
@@ -101,7 +91,7 @@ try {
         'Wankaner, Morbi, Gujarat, India'
     );
     
-    // Verify template contains required elements
+    
     $required_elements = [
         'Ribison Chemicals',
         $test_data['name'],
@@ -133,13 +123,13 @@ try {
 }
 echo "\n";
 
-// Test 5: Plain Text Email Generation
+
 echo "Test 5: Plain Text Email Generation\n";
 echo "-----------------------------------\n";
 try {
     $plain_text = createPlainTextEmail($test_data, 'Ribison Chemicals');
     
-    // Verify plain text contains required elements
+    
     $required_text_elements = [
         'Ribison Chemicals',
         $test_data['name'],
@@ -170,7 +160,7 @@ try {
 }
 echo "\n";
 
-// Test 6: Email Configuration Validation
+
 echo "Test 6: Email Configuration Validation\n";
 echo "--------------------------------------\n";
 $config_tests = [
@@ -196,7 +186,7 @@ foreach ($config_tests as $config => $value) {
 }
 echo "\n";
 
-// Test 7: JSON Data Processing
+
 echo "Test 7: JSON Data Processing\n";
 echo "----------------------------\n";
 try {
@@ -217,21 +207,21 @@ try {
 }
 echo "\n";
 
-// Test 8: Error Handling
+
 echo "Test 8: Error Handling\n";
 echo "----------------------\n";
 try {
-    // Test with invalid data
+    
     $invalid_data = ['invalid' => 'data'];
     $json_invalid = json_encode($invalid_data);
     
-    // This should fail gracefully
+    
     if (!isset($invalid_data['name']) || !isset($invalid_data['email']) || !isset($invalid_data['message'])) {
         echo "✅ Invalid data properly detected and handled\n";
         $tests_passed++;
     }
     
-    // Test empty JSON
+    
     $empty_json = '{}';
     $empty_data = json_decode($empty_json, true);
     if (!$empty_data || !isset($empty_data['name'])) {
@@ -244,11 +234,11 @@ try {
 }
 echo "\n";
 
-// Test 9: Security Features
+
 echo "Test 9: Security Features\n";
 echo "-------------------------\n";
 try {
-    // Test HTML escaping
+    
     $malicious_data = [
         'name' => '<script>alert("xss")</script>Test User',
         'email' => 'test@example.com',
@@ -263,7 +253,7 @@ try {
         'Test Address'
     );
     
-    // Check if dangerous scripts are escaped
+    
     if (strpos($safe_html, '<script>') === false && strpos($safe_html, 'onerror=') === false) {
         echo "✅ HTML content properly escaped for security\n";
         $tests_passed++;
@@ -272,7 +262,7 @@ try {
         $tests_failed++;
     }
     
-    // Test character encoding
+    
     $unicode_data = [
         'name' => 'Tëst Üsér 测试用户',
         'email' => 'test@example.com',
@@ -301,7 +291,7 @@ try {
 }
 echo "\n";
 
-// Test 10: Production Readiness
+
 echo "Test 10: Production Readiness Check\n";
 echo "-----------------------------------\n";
 $production_checklist = [
@@ -326,7 +316,7 @@ foreach ($production_checklist as $check => $result) {
 }
 echo "\n";
 
-// Final Test Results
+
 echo "===========================================\n";
 echo "TEST RESULTS SUMMARY\n";
 echo "===========================================\n";

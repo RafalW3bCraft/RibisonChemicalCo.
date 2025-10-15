@@ -10,15 +10,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // Contact form submission endpoint
   app.post("/api/contact", async (req, res) => {
     try {
       const validatedData = insertContactSchema.parse(req.body);
       
-      // Save to storage
       const contactSubmission = await storage.createContactSubmission(validatedData);
       
-      // Send email using production PHP script
       const phpScript = path.join(__dirname, "email", "send-email-production.php");
       const emailData = JSON.stringify({
         name: validatedData.name,
@@ -60,7 +57,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Get contact submissions (for admin purposes)
   app.get("/api/contacts", async (req, res) => {
     try {
       const contacts = await storage.getContactSubmissions();

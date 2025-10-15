@@ -5,9 +5,6 @@
 @tailwind utilities;
 
 :root {
-  /* Enhanced Global Industry Standard Theme System */
-  
-  /* Base System Colors - Optimized for Chemical Industry */
   --background: hsl(210, 40%, 99%);
   --foreground: hsl(215, 25%, 15%);
   --muted: hsl(210, 40%, 96%);
@@ -29,8 +26,6 @@
   --ring: hsl(201, 96%, 32%);
   --radius: 8px;
   
-  /* Ribison Brand Colors - From Company Logo */
-  /* Primary: Logo Orange - Dynamic, Innovation, Energy */
   --ribison-primary: hsl(28, 100%, 55%);
   --ribison-primary-50: hsl(28, 100%, 97%);
   --ribison-primary-100: hsl(28, 100%, 94%);
@@ -43,7 +38,6 @@
   --ribison-primary-800: hsl(20, 69%, 38%);
   --ribison-primary-900: hsl(17, 56%, 32%);
   
-  /* Secondary: Logo Blue - Professional, Trust, Reliability */
   --ribison-blue: hsl(225, 80%, 45%);
   --ribison-blue-50: hsl(225, 80%, 97%);
   --ribison-blue-100: hsl(225, 80%, 94%);
@@ -56,7 +50,6 @@
   --ribison-blue-800: hsl(225, 80%, 18%);
   --ribison-blue-900: hsl(225, 80%, 12%);
   
-  /* Accent: Gold - Premium, Quality, Excellence */
   --ribison-gold: hsl(39, 85%, 59%);
   --ribison-gold-50: hsl(39, 85%, 97%);
   --ribison-gold-100: hsl(39, 85%, 94%);
@@ -69,7 +62,6 @@
   --ribison-gold-800: hsl(39, 85%, 29%);
   --ribison-gold-900: hsl(39, 85%, 19%);
   
-  /* Supplementary Colors */
   --ribison-green: hsl(142, 71%, 45%);
   --ribison-green-50: hsl(142, 71%, 97%);
   --ribison-green-100: hsl(142, 71%, 95%);
@@ -82,7 +74,6 @@
   --ribison-green-800: hsl(142, 71%, 26%);
   --ribison-green-900: hsl(142, 71%, 20%);
   
-  /* Neutral Palette - Professional Grade */
   --ribison-neutral-50: hsl(210, 40%, 98%);
   --ribison-neutral-100: hsl(210, 40%, 96%);
   --ribison-neutral-200: hsl(214, 32%, 91%);
@@ -94,30 +85,25 @@
   --ribison-neutral-800: hsl(217, 33%, 17%);
   --ribison-neutral-900: hsl(222, 84%, 5%);
   
-  /* Semantic Colors */
   --ribison-success: hsl(142, 71%, 45%);
   --ribison-warning: hsl(39, 85%, 59%);
   --ribison-error: hsl(0, 84%, 60%);
   --ribison-info: hsl(201, 96%, 32%);
   
-  /* Chemical Industry Specific Colors */
   --ribison-platinum: hsl(0, 0%, 75%);
   --ribison-silver: hsl(0, 0%, 88%);
   --ribison-copper: hsl(16, 100%, 66%);
   --ribison-steel: hsl(210, 11%, 71%);
   
-  /* Text Color Variables */
   --ribison-accent: hsl(39, 85%, 59%);
   --ribison-body: hsl(215, 16%, 46%);
   --ribison-dark: hsl(215, 25%, 15%);
   
-  /* Premium Gradients - Logo Inspired */
   --ribison-gradient-primary: linear-gradient(135deg, hsl(28, 100%, 55%) 0%, hsl(31, 97%, 72%) 100%);
   --ribison-gradient-blue: linear-gradient(135deg, hsl(225, 80%, 45%) 0%, hsl(225, 80%, 60%) 100%);
   --ribison-gradient-hero: linear-gradient(135deg, hsl(28, 100%, 55%) 0%, hsl(225, 80%, 45%) 50%, hsl(39, 85%, 59%) 100%);
   --ribison-gradient-dark: linear-gradient(135deg, hsl(215, 25%, 15%) 0%, hsl(217, 33%, 17%) 100%);
   
-  /* Shadow System */
   --ribison-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --ribison-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   --ribison-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -126,13 +112,11 @@
   --ribison-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   --ribison-shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
   
-  /* Professional Brand Elements */
   --ribison-border-radius: 8px;
   --ribison-border-radius-sm: 4px;
   --ribison-border-radius-lg: 12px;
   --ribison-border-radius-xl: 16px;
   
-  /* Enhanced Typography Scale */
   --ribison-font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   --ribison-font-family-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   --ribison-font-family-mono: 'JetBrains Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
@@ -140,7 +124,6 @@
 }
 
 .dark {
-  /* Enhanced Dark Theme - Global Industry Standard for Chemical Companies */
   --background: hsl(222, 84%, 4%);
   --foreground: hsl(210, 40%, 98%);
   --muted: hsl(217, 33%, 10%);
@@ -161,7 +144,6 @@
   --destructive-foreground: hsl(210, 40%, 98%);
   --ring: hsl(28, 100%, 60%);
   
-  /* Enhanced Dark Mode Ribison Brand Colors */
   --ribison-primary: hsl(28, 100%, 60%);
   --ribison-primary-50: hsl(28, 100%, 8%);
   --ribison-primary-100: hsl(28, 100%, 12%);
@@ -174,7 +156,6 @@
   --ribison-primary-800: hsl(20, 69%, 75%);
   --ribison-primary-900: hsl(17, 56%, 80%);
   
-  /* Dark Mode Blue Variants */
   --ribison-blue: hsl(225, 80%, 55%);
   --ribison-blue-50: hsl(225, 80%, 8%);
   --ribison-blue-100: hsl(225, 80%, 12%);
@@ -187,7 +168,6 @@
   --ribison-blue-800: hsl(225, 80%, 75%);
   --ribison-blue-900: hsl(225, 80%, 80%);
   
-  /* Dark Mode Gold Variants */
   --ribison-gold: hsl(39, 85%, 65%);
   --ribison-gold-50: hsl(39, 85%, 8%);
   --ribison-gold-100: hsl(39, 85%, 12%);
@@ -200,7 +180,6 @@
   --ribison-gold-800: hsl(39, 85%, 80%);
   --ribison-gold-900: hsl(39, 85%, 85%);
   
-  /* Dark Mode Neutral Palette */
   --ribison-neutral-50: hsl(210, 40%, 98%);
   --ribison-neutral-100: hsl(210, 40%, 95%);
   --ribison-neutral-200: hsl(214, 32%, 85%);
@@ -212,13 +191,11 @@
   --ribison-neutral-800: hsl(217, 33%, 17%);
   --ribison-neutral-900: hsl(222, 84%, 4%);
   
-  /* Enhanced Dark Mode Gradients */
   --ribison-gradient-primary: linear-gradient(135deg, hsl(28, 100%, 60%) 0%, hsl(31, 97%, 65%) 100%);
   --ribison-gradient-blue: linear-gradient(135deg, hsl(225, 80%, 55%) 0%, hsl(225, 80%, 65%) 100%);
   --ribison-gradient-hero: linear-gradient(135deg, hsl(222, 84%, 4%) 0%, hsl(28, 100%, 15%) 20%, hsl(225, 80%, 15%) 50%, hsl(39, 85%, 15%) 80%, hsl(222, 84%, 4%) 100%);
   --ribison-gradient-dark: linear-gradient(135deg, hsl(222, 84%, 4%) 0%, hsl(217, 33%, 6%) 100%);
   
-  /* Enhanced Dark Mode Shadows */
   --ribison-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   --ribison-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
   --ribison-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
@@ -227,13 +204,11 @@
   --ribison-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
   --ribison-shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   
-  /* Dark Mode Text Color Variables */
   --ribison-accent: hsl(39, 85%, 65%);
   --ribison-body: hsl(215, 20%, 75%);
   --ribison-dark: hsl(210, 40%, 98%);
 }
 
-/* Global Dark Mode Body Styling */
 @media (prefers-color-scheme: dark) {
   body {
     background: var(--background);
@@ -246,9 +221,7 @@
   color: var(--foreground);
 }
 
-/* Enhanced Accessibility and Focus Management */
 @layer base {
-  /* Skip Link for Screen Readers */
   .skip-link {
     position: absolute;
     top: -40px;
@@ -267,14 +240,12 @@
     top: 6px;
   }
 
-  /* Enhanced Focus Styles for Accessibility */
   *:focus-visible {
     outline: 2px solid var(--ribison-primary);
     outline-offset: 2px;
     border-radius: 4px;
   }
 
-  /* High Contrast Text for Better Readability */
   .text-high-contrast {
     color: var(--ribison-neutral-900);
   }
@@ -341,7 +312,6 @@
 }
 
 @layer components {
-  /* Enhanced Typography Classes */
   .font-display {
     font-family: var(--ribison-font-family-display);
     font-weight: 600;
@@ -364,7 +334,6 @@
     font-family: var(--ribison-font-family-mono);
   }
 
-  /* Professional Button System */
   .btn-ribison {
     @apply bg-ribison-primary text-white font-semibold py-3 px-6 rounded-lg;
     @apply hover:bg-ribison-primary-600 dark:hover:bg-ribison-primary-400;
@@ -389,7 +358,6 @@
     @apply font-medium py-2 px-4 rounded-md transition-all duration-200;
   }
 
-  /* Professional Card System */
   .card-elevated {
     @apply bg-white dark:bg-ribison-neutral-800 rounded-xl shadow-lg;
     @apply border border-ribison-neutral-200 dark:border-ribison-neutral-700;
@@ -409,7 +377,6 @@
     @apply hover:scale-105 transform;
   }
 
-  /* Professional Animation Classes */
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
@@ -426,7 +393,6 @@
     animation: slideUp 0.6s ease-out;
   }
 
-  /* Professional Gradient Backgrounds */
   .bg-gradient-primary {
     background: var(--ribison-gradient-primary);
   }
@@ -443,7 +409,6 @@
     background: var(--ribison-gradient-dark);
   }
 
-  /* Professional Shadow System */
   .shadow-ribison-sm {
     box-shadow: var(--ribison-shadow-sm);
   }
@@ -474,7 +439,6 @@
 }
 
 @layer utilities {
-  /* Professional Spacing System - Global Standard */
   .space-micro { @apply space-y-1; }
   .space-xs { @apply space-y-2; }
   .space-sm { @apply space-y-3; }
@@ -486,7 +450,6 @@
   .space-3xl { @apply space-y-20; }
   .space-4xl { @apply space-y-24; }
 
-  /* Professional Padding System */
   .p-micro { @apply p-1; }
   .p-xs { @apply p-2; }
   .p-sm { @apply p-3; }
@@ -498,7 +461,6 @@
   .p-3xl { @apply p-20; }
   .p-4xl { @apply p-24; }
 
-  /* Professional Margin System */
   .m-micro { @apply m-1; }
   .m-xs { @apply m-2; }
   .m-sm { @apply m-3; }
@@ -510,7 +472,6 @@
   .m-3xl { @apply m-20; }
   .m-4xl { @apply m-24; }
   
-  /* Professional Text Effects */
   .text-shadow-sm {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   }
@@ -523,14 +484,12 @@
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
   }
 
-  /* Enhanced Glass Effects */
   .glass-effect {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
-  /* Professional Form Styles */
   .input-group {
     @apply space-y-2;
   }
@@ -551,7 +510,6 @@
     @apply border-ribison-error focus:ring-ribison-error focus:border-ribison-error;
   }
 
-  /* Performance Optimization Classes */
   .will-change-transform {
     will-change: transform;
   }
@@ -566,7 +524,6 @@
     backface-visibility: hidden;
   }
 
-  /* Professional Navigation Styles */
   .nav-link {
     @apply text-ribison-neutral-700 hover:text-ribison-primary;
     @apply dark:text-ribison-neutral-300 dark:hover:text-ribison-primary-400;
@@ -577,7 +534,6 @@
     @apply text-ribison-primary dark:text-ribison-primary-400;
   }
 
-  /* Professional Utility Classes */
   .text-balance {
     text-wrap: balance;
   }
@@ -591,7 +547,6 @@
     display: none;
   }
 
-  /* Enhanced Responsive Design Utilities for All Devices */
   .container-responsive {
     @apply max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 xl:px-12;
   }
@@ -600,7 +555,6 @@
     @apply grid gap-3 xs:gap-4 sm:gap-6 lg:gap-8;
   }
 
-  /* Enhanced Android-Specific Grid Systems */
   .grid-android-responsive {
     @apply grid gap-2 android-sm:gap-3 android-md:gap-4 android-lg:gap-5 tablet:gap-6;
   }
@@ -609,7 +563,6 @@
     @apply grid grid-cols-1 android-md:grid-cols-2 android-lg:grid-cols-2 tablet:grid-cols-3 gap-4;
   }
 
-  /* Device-Specific Grid Systems */
   .grid-mobile {
     @apply grid grid-cols-1 gap-4;
   }
@@ -622,7 +575,6 @@
     @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6;
   }
 
-  /* Android Device Optimization */
   .android-container {
     @apply container-responsive android-sm:px-2 android-md:px-3 android-lg:px-4;
   }
@@ -655,7 +607,6 @@
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
 
-  /* Responsive Text Sizing */
   .text-responsive-xs {
     @apply text-xs xs:text-sm sm:text-base;
   }
@@ -684,7 +635,6 @@
     @apply text-3xl xs:text-4xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl;
   }
 
-  /* Device-Specific Spacing */
   .spacing-mobile {
     @apply space-y-3 xs:space-y-4 sm:space-y-6;
   }
@@ -697,7 +647,6 @@
     @apply space-y-6 xl:space-y-8 2xl:space-y-12;
   }
 
-  /* Responsive Padding and Margins */
   .p-responsive {
     @apply p-3 xs:p-4 sm:p-6 lg:p-8 xl:p-12;
   }
@@ -714,12 +663,10 @@
     @apply m-2 xs:m-3 sm:m-4 lg:m-6 xl:m-8;
   }
 
-  /* Professional Focus States */
   .focus-visible-enhanced {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ribison-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
 
-  /* Enhanced Text Readability */
   .text-readable {
     line-height: 1.6;
     letter-spacing: 0.01em;
@@ -731,7 +678,6 @@
   }
 }
 
-/* Professional Animation Keyframes */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-20px); }
@@ -753,7 +699,6 @@
   }
 }
 
-/* Professional Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -765,8 +710,6 @@
   }
 }
 
-/* Enhanced Android Device Media Resolution Display */
-/* Android Small (Galaxy S8, Pixel 2) - 360px */
 @media screen and (max-width: 360px) {
   .android-sm-display {
     font-size: 0.875rem;
@@ -795,7 +738,6 @@
   }
 }
 
-/* Android Medium (Pixel 3, Galaxy S9) - 412px */
 @media screen and (min-width: 361px) and (max-width: 412px) {
   .android-md-display {
     font-size: 1rem;
@@ -829,7 +771,6 @@
   }
 }
 
-/* Android Large (Pixel 4 XL, Galaxy Note) - 432px */
 @media screen and (min-width: 413px) and (max-width: 432px) {
   .android-lg-display {
     font-size: 1.0625rem;
@@ -863,7 +804,6 @@
   }
 }
 
-/* Android Tablet (Galaxy Tab) - 768px to 1024px */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .android-tablet-display {
     font-size: 1.125rem;
@@ -917,8 +857,6 @@
   }
 }
 
-/* Device-Specific Media Queries */
-/* iPhone SE and small Android phones */
 @media screen and (max-width: 320px) {
   .hero-mobile-xs {
     padding: 1rem 0.75rem;
@@ -947,7 +885,6 @@
   }
 }
 
-/* Standard iPhones and Android phones */
 @media screen and (min-width: 375px) and (max-width: 767px) {
   .hero-mobile {
     padding: 1.5rem 1rem;
@@ -981,7 +918,6 @@
   }
 }
 
-/* Large phones (iPhone Plus, Android Large) */
 @media screen and (min-width: 414px) and (max-width: 767px) {
   .hero-mobile-lg {
     padding: 2rem 1.25rem;
@@ -1004,7 +940,6 @@
   }
 }
 
-/* Tablets (iPad, Android tablets) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .hero-tablet {
     padding: 3rem 2rem;
@@ -1021,7 +956,6 @@
   }
 }
 
-/* Laptops and small desktops */
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
   .hero-laptop {
     padding: 4rem 2.5rem;
@@ -1033,7 +967,6 @@
   }
 }
 
-/* Large desktops and 4K displays */
 @media screen and (min-width: 1920px) {
   .hero-4k {
     padding: 6rem 3rem;
@@ -1045,7 +978,6 @@
   }
 }
 
-/* Landscape orientation for mobile devices */
 @media screen and (max-height: 500px) and (orientation: landscape) {
   .hero-landscape {
     min-height: 70vh;
@@ -1058,7 +990,6 @@
   }
 }
 
-/* Universal Text Spacing and Readability */
 .text-readable {
   word-spacing: 0.05em;
   letter-spacing: 0.01em;
@@ -1091,7 +1022,6 @@
   }
 }
 
-/* Container Classes for Consistent Spacing */
 .container-responsive {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1140,7 +1070,6 @@
   }
 }
 
-/* Responsive Typography */
 .text-responsive-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -1235,7 +1164,6 @@
   }
 }
 
-/* Responsive Spacing */
 .py-responsive {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -1255,7 +1183,6 @@
   }
 }
 
-/* Professional Print Styles */
 @media print {
   .no-print {
     display: none !important;

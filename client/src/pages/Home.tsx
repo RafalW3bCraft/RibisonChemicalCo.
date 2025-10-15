@@ -70,7 +70,6 @@ export default function Home() {
     document.title = "Ribison Chemicals - Leading Chemical Manufacturing Company | Premium Industrial Solutions";
     window.scrollTo({ top: 0, behavior: 'smooth' });
     
-    // Add meta description for SEO
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Leading chemical manufacturing company specializing in premium industrial chemicals, laboratory reagents, and custom chemical solutions. ISO certified with 20+ years of excellence in chemical innovation.');
@@ -79,13 +78,10 @@ export default function Home() {
 
   return (
     <main className="min-h-screen" role="main">
-      {/* Hero Section */}
       <HeroSection />
       
-      {/* Stats Section */}
       <StatsSection />
       
-      {/* About Preview Section */}
       <section className="py-responsive bg-ribison-neutral-50 dark:bg-ribison-neutral-800">
         <div className="container-responsive">
           <div className="text-center mb-8 xs:mb-12 sm:mb-16 spacing-mobile">

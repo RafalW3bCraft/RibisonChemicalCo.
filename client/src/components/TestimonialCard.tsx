@@ -21,7 +21,6 @@ export default function TestimonialCard({
   rating,
   delay = 0 
 }: TestimonialCardProps) {
-  // Generate consistent avatar colors based on name
   const getAvatarColor = (name: string) => {
     const colors = [
       'bg-ribison-primary',
@@ -58,7 +57,6 @@ export default function TestimonialCard({
                   className="w-full h-full rounded-full object-cover"
                   loading="lazy"
                   onError={(e) => {
-                    // Fallback to initials if image fails to load
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
                     const parent = target.parentElement;

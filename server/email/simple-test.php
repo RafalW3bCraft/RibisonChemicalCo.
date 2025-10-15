@@ -1,10 +1,5 @@
 <?php
-/**
- * Simple Email System Test
- * Basic functionality test without including external files
- */
 
-// Include required classes
 require_once __DIR__ . '/PHPMailer.php';
 require_once __DIR__ . '/SMTP.php';
 require_once __DIR__ . '/Exception.php';
@@ -19,7 +14,6 @@ echo "========================\n\n";
 $tests_passed = 0;
 $tests_failed = 0;
 
-// Test 1: Class Loading
 echo "Test 1: Class Loading\n";
 try {
     $mail = new PHPMailer(true);
@@ -36,7 +30,6 @@ try {
 
 echo "\n";
 
-// Test 2: Basic Configuration
 echo "Test 2: Basic Configuration\n";
 try {
     $mail->isSMTP();
@@ -56,7 +49,6 @@ try {
 
 echo "\n";
 
-// Test 3: Email Setup
 echo "Test 3: Email Setup\n";
 try {
     $mail->setFrom('info@ribisonchemicals.com', 'Ribison Chemicals');
@@ -75,7 +67,6 @@ try {
 
 echo "\n";
 
-// Test 4: Address Validation
 echo "Test 4: Address Validation\n";
 $test_addresses = [
     'valid@example.com' => true,
@@ -97,7 +88,6 @@ foreach ($test_addresses as $addr => $expected) {
 
 echo "\n";
 
-// Final Results
 echo "Test Results:\n";
 echo "✅ Passed: $tests_passed\n";
 echo "❌ Failed: $tests_failed\n";

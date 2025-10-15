@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Simplified PHPMailer Implementation for Ribison Chemicals
- * This is a streamlined version focusing on core email functionality
- */
-
 namespace PHPMailer\PHPMailer;
 
 class PHPMailer
@@ -16,7 +11,6 @@ class PHPMailer
     const ENCRYPTION_STARTTLS = 'tls';
     const ENCRYPTION_SMTPS = 'ssl';
 
-    // Core properties
     public $CharSet = self::CHARSET_UTF8;
     public $ContentType = self::CONTENT_TYPE_PLAINTEXT;
     public $Encoding = self::ENCODING_8BIT;
@@ -28,7 +22,6 @@ class PHPMailer
     public $AltBody = '';
     public $Mailer = 'smtp';
 
-    // SMTP properties
     public $Host = 'localhost';
     public $Port = 25;
     public $Username = '';
@@ -38,14 +31,12 @@ class PHPMailer
     public $SMTPDebug = 0;
     public $Timeout = 300;
 
-    // Recipients
     protected $to = [];
     protected $cc = [];
     protected $bcc = [];
     protected $replyTo = [];
     protected $all_recipients = [];
 
-    // Internal properties
     public $exceptions = false;
     protected $error_count = 0;
     protected $smtp;
@@ -57,17 +48,11 @@ class PHPMailer
         }
     }
 
-    /**
-     * Send messages using SMTP
-     */
     public function isSMTP()
     {
         $this->Mailer = 'smtp';
     }
 
-    /**
-     * Set message type to HTML or plain
-     */
     public function isHTML($isHtml = true)
     {
         if ($isHtml) {
@@ -77,33 +62,21 @@ class PHPMailer
         }
     }
 
-    /**
-     * Add a "To" address
-     */
     public function addAddress($address, $name = '')
     {
         return $this->addAnAddress('to', $address, $name);
     }
 
-    /**
-     * Add a "CC" address
-     */
     public function addCC($address, $name = '')
     {
         return $this->addAnAddress('cc', $address, $name);
     }
 
-    /**
-     * Add a "BCC" address
-     */
     public function addBCC($address, $name = '')
     {
         return $this->addAnAddress('bcc', $address, $name);
     }
 
-    /**
-     * Add a reply-to address
-     */
     public function addReplyTo($address, $name = '')
     {
         if (!self::validateAddress($address)) {
@@ -114,9 +87,6 @@ class PHPMailer
         return true;
     }
 
-    /**
-     * Set From address
-     */
     public function setFrom($address, $name = '')
     {
         if (!self::validateAddress($address)) {
@@ -128,9 +98,6 @@ class PHPMailer
         return true;
     }
 
-    /**
-     * Add an address to recipient arrays
-     */
     protected function addAnAddress($kind, $address, $name = '')
     {
         if (!self::validateAddress($address)) {
@@ -150,17 +117,11 @@ class PHPMailer
         return false;
     }
 
-    /**
-     * Validate email address
-     */
     public static function validateAddress($address)
     {
         return filter_var($address, FILTER_VALIDATE_EMAIL) !== false;
     }
 
-    /**
-     * Send the email
-     */
     public function send()
     {
         try {
@@ -172,9 +133,6 @@ class PHPMailer
                 throw new Exception('From address is required.');
             }
 
-            // For testing purposes, we'll simulate successful sending
-            // In production, this would connect to SMTP server and send
-            
             error_log('Email would be sent from: ' . $this->From . ' to: ' . json_encode($this->to));
             error_log('Subject: ' . $this->Subject);
             error_log('Body length: ' . strlen($this->Body));
@@ -190,9 +148,6 @@ class PHPMailer
         }
     }
 
-    /**
-     * Clear all recipients
-     */
     public function clearAllRecipients()
     {
         $this->to = [];
@@ -201,18 +156,12 @@ class PHPMailer
         $this->all_recipients = [];
     }
 
-    /**
-     * Set error message
-     */
     protected function setError($msg)
     {
         $this->error_count++;
         $this->ErrorInfo = $msg;
     }
 
-    /**
-     * Get error info
-     */
     public function getError()
     {
         return ['error' => $this->ErrorInfo];

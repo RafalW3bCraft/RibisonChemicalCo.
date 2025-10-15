@@ -40,10 +40,8 @@ function Router() {
 
 function App() {
   useEffect(() => {
-    // Set document title
     document.title = "Ribison Chemicals - Leading Chemical Manufacturer";
     
-    // Add meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Ribison Chemicals - Global leader in Construction, Textile, Paint, Ceramic, Paper Mill & Agriculture Chemicals. Committed to sustainable chemical solutions since 2022.');

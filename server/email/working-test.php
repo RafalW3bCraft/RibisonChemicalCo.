@@ -1,7 +1,4 @@
 <?php
-/**
- * Working Email System Test for Ribison Chemicals
- */
 
 require_once __DIR__ . '/PHPMailer-fixed.php';
 require_once __DIR__ . '/SMTP.php';
@@ -17,7 +14,6 @@ echo "===================================\n\n";
 $tests_passed = 0;
 $tests_failed = 0;
 
-// Test Data
 $test_data = [
     'name' => 'John Smith',
     'email' => 'john.smith@example.com',
@@ -27,7 +23,6 @@ $test_data = [
     'message' => 'We are interested in your chemical products for our manufacturing process. Please send us detailed information about your product catalog and pricing.'
 ];
 
-// Test 1: PHPMailer Instance Creation
 echo "Test 1: PHPMailer Instance Creation\n";
 try {
     $mail = new PHPMailer(true);
@@ -39,7 +34,6 @@ try {
 }
 echo "\n";
 
-// Test 2: Basic Configuration
 echo "Test 2: Basic Configuration\n";
 try {
     $mail->isSMTP();
@@ -59,7 +53,6 @@ try {
 }
 echo "\n";
 
-// Test 3: Email Address Validation
 echo "Test 3: Email Address Validation\n";
 $email_tests = [
     'valid@example.com' => true,
@@ -81,7 +74,6 @@ foreach ($email_tests as $email => $expected) {
 }
 echo "\n";
 
-// Test 4: Email Setup and Recipients
 echo "Test 4: Email Setup and Recipients\n";
 try {
     $mail->setFrom('info@ribisonchemicals.com', 'Ribison Chemicals');
@@ -97,17 +89,14 @@ try {
 }
 echo "\n";
 
-// Test 5: HTML Email Content
 echo "Test 5: HTML Email Content\n";
 try {
     $mail->isHTML(true);
     $mail->Subject = 'New Contact Form Submission - Ribison Chemicals';
     
-    // Create professional HTML email
     $html_body = createTestEmailTemplate($test_data);
     $mail->Body = $html_body;
     
-    // Create plain text version
     $plain_body = createTestPlainText($test_data);
     $mail->AltBody = $plain_body;
     
@@ -123,7 +112,6 @@ try {
 }
 echo "\n";
 
-// Test 6: Email Sending Simulation
 echo "Test 6: Email Sending Simulation\n";
 try {
     $result = $mail->send();
@@ -140,12 +128,10 @@ try {
 }
 echo "\n";
 
-// Test 7: Error Handling
 echo "Test 7: Error Handling\n";
 try {
     $error_mail = new PHPMailer(true);
     
-    // Test with invalid email
     $error_mail->addAddress('invalid-email');
     echo "❌ Should have caught invalid email\n";
     $tests_failed++;
@@ -156,14 +142,13 @@ try {
 
 try {
     $empty_mail = new PHPMailer(true);
-    $empty_mail->send(); // Should fail - no recipients
+    $empty_mail->send();
 } catch (Exception $e) {
     echo "✅ Empty recipient list properly caught\n";
     $tests_passed++;
 }
 echo "\n";
 
-// Test 8: JSON Data Processing
 echo "Test 8: JSON Data Processing\n";
 try {
     $json_data = json_encode($test_data);
@@ -186,7 +171,6 @@ try {
 }
 echo "\n";
 
-// Final Results
 echo "=================================\n";
 echo "TEST RESULTS SUMMARY\n";
 echo "=================================\n";
@@ -206,9 +190,6 @@ if ($tests_failed === 0) {
     echo "Please review and fix the issues above.\n";
 }
 
-/**
- * Create test email template
- */
 function createTestEmailTemplate($data) {
     $name = htmlspecialchars($data['name']);
     $email = htmlspecialchars($data['email']);
@@ -266,9 +247,6 @@ function createTestEmailTemplate($data) {
 HTML;
 }
 
-/**
- * Create test plain text email
- */
 function createTestPlainText($data) {
     return "RIBISON CHEMICALS - New Contact Form Submission\n\n" .
            "Name: {$data['name']}\n" .

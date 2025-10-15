@@ -1,8 +1,5 @@
 <?php
-/**
- * Complete Contact Form Workflow Test
- * Tests the entire email system integration with the Express.js backend
- */
+
 
 require_once __DIR__ . '/PHPMailer-fixed.php';
 require_once __DIR__ . '/SMTP.php';
@@ -18,7 +15,7 @@ echo "======================================================\n\n";
 $tests_passed = 0;
 $tests_failed = 0;
 
-// Test Data - Realistic contact form submission
+
 $test_submissions = [
     [
         'name' => 'Dr. Rajesh Kumar',
@@ -49,11 +46,11 @@ $test_submissions = [
 echo "Test 1: Email System Core Functionality\n";
 echo "---------------------------------------\n";
 
-// Test core email functionality
+
 try {
     $mail = new PHPMailer(true);
     
-    // Configure for testing
+    
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
@@ -78,7 +75,7 @@ echo "---------------------------------------\n";
 foreach ($test_submissions as $index => $submission) {
     echo "Testing submission " . ($index + 1) . " - {$submission['name']}\n";
     
-    // Test JSON encoding
+    
     $json_data = json_encode($submission);
     if (!$json_data) {
         echo "❌ JSON encoding failed for submission " . ($index + 1) . "\n";
@@ -86,15 +83,15 @@ foreach ($test_submissions as $index => $submission) {
         continue;
     }
     
-    // Simulate the production email script execution
+    
     try {
-        // Test the production email script
+        
         $script_path = __DIR__ . '/send-email-production.php';
         $command = 'php "' . $script_path . '" \'' . addslashes($json_data) . '\'';
         
-        // Execute the script
+        
         $output = shell_exec($command . ' 2>&1');
-        $exit_code = 0; // Simulated for testing
+        $exit_code = 0; 
         
         if ($output) {
             $result = json_decode(trim($output), true);
@@ -125,10 +122,10 @@ echo "\n";
 echo "Test 3: Email Template Generation\n";
 echo "---------------------------------\n";
 
-// Test email template generation with each submission
+
 foreach ($test_submissions as $index => $submission) {
     try {
-        // Load the production email functions
+        
         $company = [
             'name' => 'Ribison Chemicals',
             'email' => 'info@ribisonchemicals.com',
@@ -137,11 +134,11 @@ foreach ($test_submissions as $index => $submission) {
             'website' => 'https://ribisonchemicals.com'
         ];
         
-        // Test HTML email generation
+        
         $html_template = generateTestHtmlTemplate($submission, $company);
         $plain_template = generateTestPlainTemplate($submission, $company);
         
-        // Validate template content
+        
         $required_html_elements = [
             $submission['name'],
             $submission['email'],
@@ -169,7 +166,7 @@ foreach ($test_submissions as $index => $submission) {
             $tests_failed++;
         }
         
-        // Validate plain text template
+        
         if (strlen($plain_template) > 100 && strpos($plain_template, $submission['name']) !== false) {
             echo "✅ Plain text template generated correctly for {$submission['name']}\n";
             $tests_passed++;
@@ -189,7 +186,7 @@ echo "\n";
 echo "Test 4: Data Security and Validation\n";
 echo "------------------------------------\n";
 
-// Test security features
+
 $security_tests = [
     'HTML Injection' => [
         'name' => '<script>alert("xss")</script>Test User',
@@ -220,7 +217,7 @@ foreach ($security_tests as $test_name => $test_data) {
         
         $safe_html = generateTestHtmlTemplate($test_data, $company);
         
-        // Check for security issues
+        
         $security_passed = true;
         
         if (strpos($safe_html, '<script>') !== false || strpos($safe_html, 'onerror=') !== false) {
@@ -245,7 +242,7 @@ echo "\n";
 echo "Test 5: System Integration Check\n";
 echo "--------------------------------\n";
 
-// Check all required files exist
+
 $required_files = [
     'PHPMailer-fixed.php' => 'Core PHPMailer class',
     'SMTP.php' => 'SMTP handling class',
@@ -263,7 +260,7 @@ foreach ($required_files as $file => $description) {
     }
 }
 
-// Check PHP configuration
+
 $php_requirements = [
     'JSON support' => function_exists('json_encode'),
     'Filter support' => function_exists('filter_var'),
@@ -283,7 +280,7 @@ foreach ($php_requirements as $requirement => $check) {
 
 echo "\n";
 
-// Final Results
+
 echo "======================================================\n";
 echo "COMPREHENSIVE TEST RESULTS\n";
 echo "======================================================\n";
@@ -321,7 +318,7 @@ if ($tests_failed === 0) {
 
 echo "\nEmail system test completed.\n";
 
-// Helper functions for template generation
+
 function generateTestHtmlTemplate($data, $company) {
     $name = htmlspecialchars($data['name'], ENT_QUOTES, 'UTF-8');
     $email = htmlspecialchars($data['email'], ENT_QUOTES, 'UTF-8');
